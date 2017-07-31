@@ -1,0 +1,802 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="hexo," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="博主第一个Blog就是通过hexo搭建出来的，大概用了两天，期间碰到太多的问题了，基本上所有的错误都出现了= =搭建完后顺便写一个教程吧~博主使用的平台是windows 10。">
+<meta name="keywords" content="hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何将Hexo静态博客搭建在GitHub上">
+<meta property="og:url" content="http://flands.com/2015/10/30/7.hexo搭建/index.html">
+<meta property="og:site_name" content="Wellcome">
+<meta property="og:description" content="博主第一个Blog就是通过hexo搭建出来的，大概用了两天，期间碰到太多的问题了，基本上所有的错误都出现了= =搭建完后顺便写一个教程吧~博主使用的平台是windows 10。">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://7xnzvs.com1.z0.glb.clouddn.com/new.png">
+<meta property="og:image" content="http://7xnzvs.com1.z0.glb.clouddn.com/new0.png">
+<meta property="og:image" content="http://7xnzvs.com1.z0.glb.clouddn.com/git.jpg">
+<meta property="og:image" content="http://7xnzvs.com1.z0.glb.clouddn.com/error.png">
+<meta property="og:image" content="http://7xnzvs.com1.z0.glb.clouddn.com/error.png">
+<meta property="og:updated_time" content="2017-07-31T12:36:02.956Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="如何将Hexo静态博客搭建在GitHub上">
+<meta name="twitter:description" content="博主第一个Blog就是通过hexo搭建出来的，大概用了两天，期间碰到太多的问题了，基本上所有的错误都出现了= =搭建完后顺便写一个教程吧~博主使用的平台是windows 10。">
+<meta name="twitter:image" content="http://7xnzvs.com1.z0.glb.clouddn.com/new.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://flands.com/2015/10/30/7.hexo搭建/"/>
+
+
+
+
+
+  <title> 如何将Hexo静态博客搭建在GitHub上 | Wellcome </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Wellcome</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <p class="site-subtitle"></p>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://flands.com/2015/10/30/7.hexo搭建/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Doug Flands">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/avatar/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Wellcome">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Wellcome" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                如何将Hexo静态博客搭建在GitHub上
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2015-10-30T21:32:00+08:00">
+                2015-10-30
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2015/10/30/7.hexo搭建/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/10/30/7.hexo搭建/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>博主第一个Blog就是通过hexo搭建出来的，大概用了两天，期间碰到太多的问题了，基本上所有的错误都出现了= =搭建完后顺便写一个教程吧~<br>博主使用的平台是windows 10。
+<a id="more"></a></p>
+<h3 id="Hexo静态博客的准备工作"><a href="#Hexo静态博客的准备工作" class="headerlink" title="Hexo静态博客的准备工作"></a><strong>Hexo静态博客的准备工作</strong></h3><ul>
+<li>首先是<a href="https://nodejs.org/en/" target="_blank" rel="external">node.js</a>下载安装</li>
+<li>git我使用的是<a href="http://git-scm.com/download/win" target="_blank" rel="external">git bash</a></li>
+<li>以及编辑博客使用<a href="http://markdownpad.com/" target="_blank" rel="external">MarkdownPad2</a>   (用免费版就够了，不收费)</li>
+</ul>
+<h3 id="GitHub部分"><a href="#GitHub部分" class="headerlink" title="GitHub部分"></a><strong>GitHub部分</strong></h3><p>注册就不多说了，如果注册后不想用那个ID了账号是可以删除的哦<br>首先新建一个profile<br><img src="http://7xnzvs.com1.z0.glb.clouddn.com/new.png" alt="new"><br>然后格式一定是<code>你的ID.github.io</code><br><img src="http://7xnzvs.com1.z0.glb.clouddn.com/new0.png" alt="new0"><br>之后点击绿色的create repository创建<br>另外推荐下载<a href="http://windows.github.com/" target="_blank" rel="external">GitHub for windows</a>要是会用Git工具的话也可以不用<br>这样你的Blog就建立好了，但是什么都木有</p>
+<h2 id="关于GitHub-for-windows的使用方法"><a href="#关于GitHub-for-windows的使用方法" class="headerlink" title="关于GitHub for windows的使用方法 "></a><strong>关于GitHub for windows的使用方法 </strong></h2><p>官方下载好后就让他下载安装，由于国内速度很慢，所以我也是晚上睡觉挂机下载一晚上，第二天早上看见下载好了的<br>先说UI怎么用吧 </p>
+<h4 id="UI相关"><a href="#UI相关" class="headerlink" title="UI相关"></a><strong>UI相关</strong></h4><ul>
+<li>Add:添加一个目录（可以同步到Github）</li>
+<li>Create:新建一个目录（也是可以同步到Github）</li>
+<li>Clone:从你的Github账号下载一个profile</li>
+<li>最上方有Changes和History</li>
+<li>Changes:显示更改过的项目(你更改文件后会立即显示出来）</li>
+<li>History:显示同步的历史，可以倒退回某个版本</li>
+<li>上面的圆点就是你的版本，点一下就是同步过的哪个版本<h4 id="同步方法"><a href="#同步方法" class="headerlink" title="同步方法"></a><strong>同步方法</strong></h4></li>
+<li>Create一个profile或者Add一个profile</li>
+<li>然后在文件夹里添加一个文件</li>
+<li>Changes就会显示出你修改过的文件</li>
+<li>底下的Sunmmary是标签(一定要写点东西，比如hexo相关的就写Hexo)，Description是备注</li>
+<li>填好后不出意外Commit to master就不是灰色的了</li>
+<li><p>点击右上角的Syncing就同步了
+<img src="http://7xnzvs.com1.z0.glb.clouddn.com/git.jpg" alt="git"></p>
+<h3 id="Hexo搭建"><a href="#Hexo搭建" class="headerlink" title="Hexo搭建"></a><strong>Hexo搭建</strong></h3></li>
+<li><p><strong>安装</strong><br>CD到你指定的目录，打开Gitbash，输入 <code>npm install -g hexo</code>执行安装 
+CD使用:比如指定到D盘，cd d:，指定到某个目录 cd d:github/hexo<br>或者直接到即将安装的目录右键点击Git bash here也可以</p>
+</li>
+<li><p><strong>初始化 </strong><br>指定要安装目录执行<code>hexo init</code><br>博主是直接安装到了hexo目录下并且同步到git hub了的</p>
+</li>
+<li><p><strong>生成静态页面</strong><br>CD到安装目录下<code>hexo generate</code></p>
+</li>
+<li><p><strong>本地启动</strong><br>启动本地服务<code>hexo server</code>
+浏览器输入<code>http://localhost:4000</code>即可浏览<br>请使用高级浏览器，chrome,firefox,edge都可以，自行尝试</p>
+</li>
+<li><p><strong>写文章</strong>
+执行<code>hexo new [标签] &quot;文章名&quot;</code>命令之间中间有空格<br>文章保存在<code>hexo\source\_posts\postName.md</code></p>
+</li>
+<li><p><strong>标签 </strong><br>可以不用写，所以也可以执行<code>hexo new &quot;文章名&quot;</code><br>你也可以自行添加默认标签<code>hexo\scaffolds\post.md</code>  </p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">title: &#123; &#123; title &#125; &#125;</div><div class="line">date: &#123; &#123; date &#125; &#125;</div><div class="line">tags:</div></pre></td></tr></table></figure>
+<p>想添加其他的参数可以直接插入一行
+<code>categories:</code></p>
+<ul>
+<li><strong>生成的文章</strong><br>地址在<code>hexo\source\_posts\postName.md</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">title: postName #文章页面上的显示名称，可以任意修改，不会出现在URL中</div><div class="line">date: 2013-12-02 15:30:16 #文章生成时间，一般不改，当然也可以任意修改</div><div class="line">categories: #文章分类目录，可以为空，注意:后面有个空格</div><div class="line">tags: #文章标签，可空，多标签请用格式[tag1,tag2,tag3]，注意:后面有个空格</div><div class="line">·······</div><div class="line">这里开始使用markdown格式输入你的正文。</div></pre></td></tr></table></figure>
+<ul>
+<li><strong>文章摘要</strong>   <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">以上是摘要</div><div class="line">&lt;!--more--&gt;</div><div class="line">以下是余下全文</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>主页中你肯定不想直接显示一长篇的文章吧，用这个就行</p>
+<ul>
+<li><p><strong>主题安装</strong>
+博主用的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>主题<br>主题下载到到本地，然后放到themes文件夹里<br>然后在根目录下打开_config.yml，将底下的(似乎是66行）theme更改为yilia<br>就是你下载的主题的名字，记得是theme:空格yilia<br>此文件任何一个冒号后面必须加空格！！！</p>
+</li>
+<li><p><strong>评论框</strong><br>墙裂建议使用多说评论，先注册一个账户<br>然后打开theme/yilia目录下的_config.yml<br>duoshuo: 你在多说的ID<br>这个主题更改方式很简单，如果使用其他主题，请自行搜索其他教程= =</p>
+</li>
+</ul>
+<p>至此Hexo就搭建完成</p>
+<h2 id="Hexo部署到GitHub"><a href="#Hexo部署到GitHub" class="headerlink" title="Hexo部署到GitHub"></a>Hexo部署到GitHub</h2><p>打开根目录下_config.yml，修改最底下的
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy: </div><div class="line"> type: git</div><div class="line"> repository: git@github.com:你的ID/你的ID.github.io.git</div><div class="line"> branch: master</div></pre></td></tr></table></figure></p>
+<p>可以复制上面的进行修改<br>然后执行</p>
+<pre><code>hexo deploy   
+</code></pre><p>如果报错<br><img src="http://7xnzvs.com1.z0.glb.clouddn.com/error.png" alt="error"><br>将deploy 的 type 改成 git，执行</p>
+<pre><code>npm install hexo-deployer-git --save
+</code></pre><p>重新执行hexo deploy
+好了，如果成功部署，那么打开</p>
+<pre><code>你的ID.github.io/
+</code></pre><p>应该有效果咯~</p>
+<p>我自己还碰到个错误
+hexo deploy后提示Permission denied (publickey) 
+<img src="http://7xnzvs.com1.z0.glb.clouddn.com/error.png" alt="er"><br>试试接着ssh -T -v git@github.com 看下具体信息   </p>
+<blockquote>
+<p><a href="http://blog.csdn.net/sunnypotter/article/details/18948053" target="_blank" rel="external">http://blog.csdn.net/sunnypotter/article/details/18948053</a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">enSSH_6.1p1 Debian-4, OpenSSL 1.0.1c 10 May 2012  </div><div class="line">debug1: Reading configuration data /etc/ssh/ssh_config  </div><div class="line">debug1: /etc/ssh/ssh_config line 19: Applying options for *  </div><div class="line">debug1: Connecting to github.com [192.30.252.131] port 22.  </div><div class="line">debug1: Connection established.  </div><div class="line">debug1: identity file /home/sunny/.ssh/id_rsa type -1  </div><div class="line">debug1: identity file /home/sunny/.ssh/id_rsa-cert type -1  </div><div class="line">debug1: identity file /home/sunny/.ssh/id_dsa type -1  </div><div class="line">debug1: identity file /home/sunny/.ssh/id_dsa-cert type -1  </div><div class="line">debug1: identity file /home/sunny/.ssh/id_ecdsa type -1  </div><div class="line">debug1: identity file /home/sunny/.ssh/id_ecdsa-cert type -1  </div><div class="line">debug1: Remote protocol version 2.0, remote software version OpenSSH_5.9p1 Debian-5ubuntu1+github5  </div><div class="line">debug1: match: OpenSSH_5.9p1 Debian-5ubuntu1+github5 pat OpenSSH_5*  </div><div class="line">debug1: Enabling compatibility mode for protocol 2.0  </div><div class="line">debug1: Local version string SSH-2.0-OpenSSH_6.1p1 Debian-4  </div><div class="line">debug1: SSH2_MSG_KEXINIT sent  </div><div class="line">debug1: SSH2_MSG_KEXINIT received  </div><div class="line">debug1: kex: server-&gt;client aes128-ctr hmac-md5 none  </div><div class="line">debug1: kex: client-&gt;server aes128-ctr hmac-md5 none  </div><div class="line">debug1: sending SSH2_MSG_KEX_ECDH_INIT  </div><div class="line">debug1: expecting SSH2_MSG_KEX_ECDH_REPLY  </div><div class="line">debug1: Server host key: RSA 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48  </div><div class="line">debug1: Host &apos;github.com&apos; is known and matches the RSA host key.  </div><div class="line">debug1: Found key in /home/sunny/.ssh/known_hosts:1  </div><div class="line">debug1: ssh_rsa_verify: signature correct  </div><div class="line">debug1: SSH2_MSG_NEWKEYS sent  </div><div class="line">debug1: expecting SSH2_MSG_NEWKEYS  </div><div class="line">debug1: SSH2_MSG_NEWKEYS received  </div><div class="line">debug1: Roaming not allowed by server  </div><div class="line">debug1: SSH2_MSG_SERVICE_REQUEST sent  </div><div class="line">debug1: SSH2_MSG_SERVICE_ACCEPT received  </div><div class="line">debug1: Authentications that can continue: publickey  </div><div class="line">debug1: Next authentication method: publickey  </div><div class="line">debug1: Trying private key: /home/sunny/.ssh/id_rsa  </div><div class="line">debug1: Trying private key: /home/sunny/.ssh/id_dsa  </div><div class="line">debug1: Trying private key: /home/sunny/.ssh/id_ecdsa  </div><div class="line">debug1: No more authentication methods to try.  </div><div class="line">Permission denied (publickey).  </div><div class="line"></div><div class="line">可以发现在一下几行出现问题：  </div><div class="line">debug1: Next authentication method: publickey  </div><div class="line">debug1: Trying private key: /home/sunny/.ssh/id_rsa  </div><div class="line">debug1: Trying private key: /home/sunny/.ssh/id_dsa  </div><div class="line">debug1: Trying private key: /home/sunny/.ssh/id_ecdsa  </div><div class="line">debug1: No more authentication methods to try.  </div><div class="line">Permission denied (publickey).  </div><div class="line"></div><div class="line">它一直在查找id_rsa、id_dsa、id_ecdsa这三个文件，然后就不尝试其他了   </div><div class="line">我们查看下 ~/.ssh文件夹下的文件：ls ~/.ssh  </div><div class="line">github  github.pub ...  </div><div class="line">这里没查找的文件，github是创建ssh-key时输入的名字  </div><div class="line">现在我们让~/.ssh文件夹下,还原当初没有改时的名字id_rsa </div><div class="line">github改名id_rsa，gitbub.pub改名id_rsa.pub  </div><div class="line">再次尝试连接:ssh -T git@github.com</div><div class="line">Hi xxx ! You&apos;ve successfully authenticated, but GitHub does not provide shell access.成功。</div></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="命令简写"><a href="#命令简写" class="headerlink" title="命令简写"></a>命令简写</h2><ul>
+<li>hexo g == hexo generate</li>
+<li>hexo d == hexo deploy</li>
+<li>hexo s == hexo server</li>
+<li>hexo n == hexo new</li>
+<li>还能组合使用，如：</li>
+<li>hexo d -g</li>
+</ul>
+<h2 id="申请域名"><a href="#申请域名" class="headerlink" title="申请域名"></a>申请域名</h2><p>参考我的另外一篇教程<a href="http://flands.com/2015/12/02/%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D/">购买域名</a><br>放几个其他的教程上来，需要的看他们的就行啦~</p>
+<blockquote>
+<p><a href="http://www.tuicool.com/articles/AfQnQjy/" target="_blank" rel="external">http://www.tuicool.com/articles/AfQnQjy/</a><br><a href="http://sunwhut.com/2015/10/30/buildBlog/" target="_blank" rel="external">http://sunwhut.com/2015/10/30/buildBlog/</a></p>
+</blockquote>
+<h3 id="完结撒花"><a href="#完结撒花" class="headerlink" title="完结撒花"></a>完结撒花</h3><p><em>★,°</em>:.☆(￣▽￣)/$:<em>.°★</em> </p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/hexo/" rel="tag"># hexo</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2015/10/29/1.SS/" rel="next" title="SS&AC简易手册">
+                <i class="fa fa-chevron-left"></i> SS&AC简易手册
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/11/03/4.Google拼音的搜狗皮肤/" rel="prev" title="Google拼音的搜狗皮肤">
+                Google拼音的搜狗皮肤 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar/avatar.png"
+               alt="Doug Flands" />
+          <p class="site-author-name" itemprop="name">Doug Flands</p>
+          <p class="site-description motion-element" itemprop="description">Flands</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">18</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo静态博客的准备工作"><span class="nav-number">1.</span> <span class="nav-text">Hexo静态博客的准备工作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GitHub部分"><span class="nav-number">2.</span> <span class="nav-text">GitHub部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于GitHub-for-windows的使用方法"><span class="nav-number"></span> <span class="nav-text">关于GitHub for windows的使用方法 </span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#UI相关"><span class="nav-number">0.1.</span> <span class="nav-text">UI相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#同步方法"><span class="nav-number">0.2.</span> <span class="nav-text">同步方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Hexo搭建"><span class="nav-number">1.</span> <span class="nav-text">Hexo搭建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo部署到GitHub"><span class="nav-number"></span> <span class="nav-text">Hexo部署到GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命令简写"><span class="nav-number"></span> <span class="nav-text">命令简写</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#申请域名"><span class="nav-number"></span> <span class="nav-text">申请域名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#完结撒花"><span class="nav-number">1.</span> <span class="nav-text">完结撒花</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doug Flands</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'flands-1';
+      var disqus_identifier = '2015/10/30/7.hexo搭建/';
+
+      var disqus_title = "如何将Hexo静态博客搭建在GitHub上";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>
