@@ -1,0 +1,977 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|consolas:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="CSS," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="架构笔记">
+<meta name="keywords" content="CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="页面架构笔记">
+<meta property="og:url" content="http://flands.com/2017/05/20/14.架构/index.html">
+<meta property="og:site_name" content="Wellcome">
+<meta property="og:description" content="架构笔记">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-03-10T14:25:53.273Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="页面架构笔记">
+<meta name="twitter:description" content="架构笔记">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://flands.com/2017/05/20/14.架构/"/>
+
+
+
+
+
+  <title> 页面架构笔记 | Wellcome </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Wellcome</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+    
+      <h1 class="site-subtitle" itemprop="description"></h1>
+    
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+  <link itemprop="mainEntityOfPage" href="http://flands.com/2017/05/20/14.架构/">
+
+  <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <meta itemprop="name" content="Doug Flands">
+    <meta itemprop="description" content="">
+    <meta itemprop="image" content="/avatar/avatar.png">
+  </span>
+
+  <span style="display:none" itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Wellcome">
+    <span style="display:none" itemprop="logo" itemscope itemtype="http://schema.org/ImageObject">
+      <img style="display:none;" itemprop="url image" alt="Wellcome" src="">
+    </span>
+  </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+            
+            
+              
+                页面架构笔记
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-20T23:56:00+08:00">
+                2017-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/05/20/14.架构/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/05/20/14.架构/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>架构笔记</p>
+<a id="more"></a>
+<h1 id="页面架构"><a href="#页面架构" class="headerlink" title="页面架构"></a>页面架构</h1><h2 id="居中布局"><a href="#居中布局" class="headerlink" title="居中布局"></a>居中布局</h2><h3 id="平行"><a href="#平行" class="headerlink" title="平行"></a>平行</h3><ol>
+<li>父 <code>display: inline-block</code> 子 <code>text-align:center</code></li>
+<li>子 <code>display:table;margin:0 auto</code></li>
+<li>父 <code>position:relative</code> 子 <code>position:absolute;left:50%;transform:translateX(-50%)</code></li>
+<li>父 <code>display:flex;justify-content:center</code></li>
+<li>父 <code>display:flex</code> 子 <code>margin:0 auto</code></li>
+</ol>
+<h3 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h3><ol>
+<li>父 <code>display:table-cell;vertical-align:middle</code></li>
+<li>父 <code>position:relative</code> 子 <code>position:absolute;top:50%;transform:translateY(-50%)</code></li>
+<li>父 <code>display:flex;align-items</code></li>
+</ol>
+<h3 id="水平垂直"><a href="#水平垂直" class="headerlink" title="水平垂直"></a>水平垂直</h3><ol>
+<li>父 <code>text-align:center;display:table-cell;vertical-align:middle</code> 子 <code>display:inline-block</code></li>
+<li>绝对定位方法</li>
+<li>flex方法，上面的4+3</li>
+</ol>
+<h3 id="CSS3新增"><a href="#CSS3新增" class="headerlink" title="CSS3新增"></a>CSS3新增</h3><ol>
+<li>完全居中<code>position:absolute;top: calc(50% - 3em);left: calc(50% - 9em);width: 18em;height: 6em;</code></li>
+<li>vw = 视口宽度的1%,vh同理高度<code>width: 18em;margin: 50vh auto 0; transform: translateY(-50%);</code></li>
+</ol>
+<h2 id="多列布局"><a href="#多列布局" class="headerlink" title="多列布局"></a>多列布局</h2><h3 id="定宽-自适应"><a href="#定宽-自适应" class="headerlink" title="定宽+自适应"></a>定宽+自适应</h3><ol>
+<li>left<code>float:left</code>right<code>float:right;margin-left:-100px</code>right-1<code>margin-left:120px</code>兼容性好</li>
+<li>清除浮动，不环绕<code>overflow:hidden</code></li>
+<li>父<code>display:table;table-layout:fixed;(布局优先，优化速度)</code> L,R <code>display:table-cell</code> L设置宽度,间隙用padding</li>
+<li>父flex,right<code>flex:1(剩余宽度分配给right)</code><h3 id="不定-自适应"><a href="#不定-自适应" class="headerlink" title="不定+自适应"></a>不定+自适应</h3></li>
+<li>上2可实现</li>
+<li>table实现。left随内容宽度变化,去掉fixed,left<code>width:0.1%(兼容)</code>left p<code>width:200px</code></li>
+<li>上4<h3 id="等分"><a href="#等分" class="headerlink" title="等分"></a>等分</h3></li>
+<li>父 <code>margin-left:-20px</code> 子 <code>float:left;width:25%;padding-left:20px;box-sizing:border-box;</code></li>
+<li>父元素的父添加<code>margin-left:-20px</code>父使用table,子<code>display:table-cell;padding-left:20px</code></li>
+<li>flex,子flex:1,间隙用新增<code>class{margin-left}</code><h3 id="等高"><a href="#等高" class="headerlink" title="等高"></a>等高</h3></li>
+<li>定宽+自适应table方法</li>
+<li>定宽+自适应flex方法</li>
+<li>float F,L<code>padding-bottom:9999px;margin-bottom:-9999px</code>父<code>overflow:hidden</code></li>
+</ol>
+<h1 id="响应式"><a href="#响应式" class="headerlink" title="响应式"></a>响应式</h1><h2 id="viewpoint"><a href="#viewpoint" class="headerlink" title="viewpoint"></a>viewpoint</h2><p><code>&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width&quot;(设备宽度),initial-scale=1.0(禁止缩小,user-scalable=no(禁止手动缩放))/&gt;</code></p>
+<h2 id="media"><a href="#media" class="headerlink" title="@media"></a>@media</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@media screen and (max-width:320px)&#123;/*宽度&lt;=320px*/ .a&#123;直接更改&#125;&#125;</span><br><span class="line">(min-width:769px&#123;视窗宽度&gt;=769px生效&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="页面优化"><a href="#页面优化" class="headerlink" title="页面优化"></a>页面优化</h1><ol>
+<li>减少请求<ul>
+<li>图片分类合并。</li>
+<li>减少CSS文件请求：a.多个CSS文件合并为一个。b.少量CSS样式内联。c.避免使用import的方式引入CSS文件。</li>
+</ul>
+</li>
+<li>减少文件大小<ul>
+<li>减少图片大小：a.选择合适的图片格式PNG或者JPG。b.用工具无损或者有损的压缩图片，比如ImageOptim，ImageAlpha，JPEGmini等工具。</li>
+<li>CSS值缩写，比如margin,padding,border,border-radius,font,background等</li>
+<li>省略值为0的单位，0px，0%，0.5省略为0,  0，.5</li>
+<li>颜色值最短表示，#333这种。</li>
+<li>CSS选择器合并。</li>
+<li>文件压缩工具去掉空格，减少文件大小。比如YUI Compressor，cssmin等工具。</li>
+</ul>
+</li>
+<li>提高页面性能<ul>
+<li>加载顺序合理，CSS放在head的底部，JS文件放在body的底部。</li>
+<li>减少不必要的标签数量。</li>
+<li>使用尽可能短的选择器长度。</li>
+<li>避免耗性能的属性的使用，比如expression，filter，border-radius，box-shadow,gradients等。</li>
+<li>图片设置宽高，比如img标签中设置width和height。</li>
+<li>所有的表现尽可能用CSS实现，少用JS实现。</li>
+</ul>
+</li>
+<li>可读性，可维护性<ul>
+<li>规范，缩进，变量命名规范，文件命名规范等等。</li>
+<li>语义化，尽量用语义化的标签和语义化的命名。</li>
+<li>尽量避免Hack，Hack加前缀。</li>
+<li>模块化。</li>
+<li>注释。</li>
+</ul>
+</li>
+</ol>
+<h1 id="规范"><a href="#规范" class="headerlink" title="规范"></a>规范</h1><ol>
+<li><p>文件规范</p>
+<ul>
+<li>文件分类</li>
+</ul>
+<ul>
+<li>通用类 JQ,RESET</li>
+<li>业务类</li>
+</ul>
+<ul>
+<li>文件引入</li>
+</ul>
+<ul>
+<li>行内样式 不推荐，偶尔用</li>
+<li>外联</li>
+<li>内联</li>
+<li>不使用@import</li>
+</ul>
+<ul>
+<li>文件本身</li>
+</ul>
+<ul>
+<li>文件名 组成方法</li>
+<li>编码</li>
+</ul>
+</li>
+<li><p>注释规范</p>
+<ul>
+<li>块状注释</li>
+</ul>
+<ul>
+<li>统一缩进</li>
+<li>在被注释对象之上</li>
+</ul>
+<ul>
+<li>单行注释</li>
+</ul>
+<ul>
+<li>两端空格</li>
+<li>在被注释对象之上</li>
+</ul>
+<ul>
+<li>行内注释</li>
+</ul>
+<ul>
+<li>两端空格</li>
+<li>分号之后</li>
+</ul>
+</li>
+<li><p>命名规范</p>
+<ul>
+<li>分类命名</li>
+</ul>
+<ul>
+<li>G-全局</li>
+</ul>
+<ul>
+<li>命名格式</li>
+</ul>
+<ul>
+<li>大小写</li>
+<li>长度</li>
+</ul>
+<ul>
+<li>语义化命名</li>
+</ul>
+<ul>
+<li>以内容语义命名</li>
+</ul>
+</li>
+<li><p>书写规范</p>
+<ul>
+<li>单行与多行</li>
+<li>空格与分号</li>
+</ul>
+<ul>
+<li>2 or 4</li>
+<li>规则内空格</li>
+</ul>
+<ul>
+<li>属性顺序</li>
+</ul>
+<ul>
+<li>属性重要性顺序书写(显示属性(位置),自身属性(长度,盒子),文本)</li>
+</ul>
+<ul>
+<li>Hack方式</li>
+</ul>
+<ul>
+<li>加下划线</li>
+<li>IE6: _</li>
+<li>IE6/7: *</li>
+</ul>
+<ul>
+<li>值格式</li>
+</ul>
+<ul>
+<li>color: 十六进制</li>
+<li>url(): 引号</li>
+</ul>
+</li>
+<li><p>其他规范</p>
+<ul>
+<li>HTML规范</li>
+</ul>
+<ul>
+<li>文档声明</li>
+<li>闭合: 自闭合标签</li>
+<li>属性</li>
+<li>层级: 缩进,正确嵌套</li>
+<li>注释</li>
+<li>大小写</li>
+</ul>
+<ul>
+<li>图片规范</li>
+</ul>
+<ul>
+<li>文件名称:语义,长度</li>
+<li>保留原文件</li>
+<li>图片合并:尽可能用sprite,按类型划分</li>
+</ul>
+</li>
+</ol>
+<h1 id="git命令"><a href="#git命令" class="headerlink" title="git命令"></a>git命令</h1><h2 id="git-config"><a href="#git-config" class="headerlink" title="git config"></a>git config</h2><ul>
+<li>用户配置
+git config –global user.name “name”
+git config –global user.email <a href="mailto:aa@qq.com" target="_blank" rel="noopener">aa@qq.com</a></li>
+<li>配置级别<ul>
+<li>–local[默认，高优先级]:只影响本仓库</li>
+<li>–global[中优先级]: 影响到所有当前用户的git仓库</li>
+<li>–system[低优先级]: 影响到全系统的git仓库</li>
+</ul>
+</li>
+</ul>
+<p><code>$ git status</code> 检测是否有仓库<br><code>$ git init</code> 创建仓库    </p>
+<h2 id="git-status"><a href="#git-status" class="headerlink" title="git status"></a>git status</h2><ul>
+<li><p>内容状态</p>
+<ul>
+<li>工作目录</li>
+<li>暂存区</li>
+<li>提交区</li>
+</ul>
+</li>
+<li><p>文件状态</p>
+<ul>
+<li>未跟踪</li>
+<li>已跟踪</li>
+</ul>
+</li>
+</ul>
+<h2 id="git-add"><a href="#git-add" class="headerlink" title="git add"></a>git add</h2><p><code>$ git add .</code>添加当前目录下所有文件<br><code>.gitignore</code> 忽略匹配的文件    </p>
+<h2 id="git-rm"><a href="#git-rm" class="headerlink" title="git rm"></a>git rm</h2><p><code>git rm --cached</code>仅从暂存区删除<br><code>git rm</code> 从暂存区与工作目录删除<br><code>git rm $(git ls-files --deleted)</code> 删除所有被跟踪但在工作目录被删除的文件</p>
+<h2 id="git-commit"><a href="#git-commit" class="headerlink" title="git commit"></a>git commit</h2><p><code>git commit</code> 将暂存区内容提交至提交区<br><code>git commit -a</code> 工作目录直接提交至提交区</p>
+<h2 id="git-log"><a href="#git-log" class="headerlink" title="git-log"></a>git-log</h2><p>记录提交记录<br><code>git config --global alias.shortname &quot;(将要缩短的命令)&quot;</code> alias自定义命令<br><code>git config --global alias.lg &quot;log --color --graph --pretty=format:&#39;%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(boldblue)&lt;%an&gt;%Creset&#39; --abbrev-commit&quot;</code></p>
+<h2 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a>git diff</h2><p><code>git diff</code> 显示版本差异<br><code>git diff --cached[&lt;reference&gt;]</code> 暂存区与某次提交差异，默认为HEAD
+<code>git diff &lt;reference&gt;</code> 工作区与某次提交差异</p>
+<h2 id="改动"><a href="#改动" class="headerlink" title="改动"></a>改动</h2><ul>
+<li>git checkout –<file> 将文件内容从暂存区复制到工作目录</file></li>
+<li>git reset HEAD <file> 将文件内容从上次提交复制到暂存区</file></li>
+<li>git checkout HEAD –<file> 撤销全部改动，将上次提交复制到工作目录</file></li>
+</ul>
+<h1 id="git分支操作"><a href="#git分支操作" class="headerlink" title="git分支操作"></a>git分支操作</h1><ul>
+<li>git branch <name> 创建分支</name></li>
+<li>git branch -d 删除分支</li>
+<li>git branch -v 显示所有分支信息</li>
+<li>git branch next 指向的对象上创建引用</li>
+<li>git checkout -b <name> 创建分支并切换</name></li>
+<li>git checkout - 回到上一个分支</li>
+<li>git reset 回退到某个版本</li>
+<li>git reset –mixed <id> 回退到某个版本</id></li>
+<li>git reset –HEAD <id> 复制到工作目录区</id></li>
+<li>git reset –soft <id> </id></li>
+<li>git reflog 打印经过的路径</li>
+<li>git stash 保存工作目录和暂存区状态，并返回到干净的工作目录</li>
+<li>git merge 合并分支</li>
+<li>git rebase 修剪提交历史的基线</li>
+</ul>
+<h1 id="远程操作"><a href="#远程操作" class="headerlink" title="远程操作"></a>远程操作</h1><ul>
+<li>git remote -v 添加远程仓库别名</li>
+<li>git fetch + merge 提交历史</li>
+<li>git pull = fetch + merge</li>
+<li>git clone 克隆一个远程仓库，包括历史</li>
+</ul>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/15/10.JS笔记/" rel="next" title="JavaScript笔记">
+                <i class="fa fa-chevron-left"></i> JavaScript笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/20/13.DOM艺术/" rel="prev" title="DOM操作笔记">
+                DOM操作笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+          
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/avatar/avatar.png"
+               alt="Doug Flands" />
+          <p class="site-author-name" itemprop="name">Doug Flands</p>
+          <p class="site-description motion-element" itemprop="description">Flands</p>
+        </div>
+        <nav class="site-state motion-element">
+        
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">29</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">20</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/DougFlands" target="_blank" title="GitHub">
+                  
+                    <i class="fa fa-fw fa-github"></i>
+                  
+                  GitHub
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#页面架构"><span class="nav-number">1.</span> <span class="nav-text">页面架构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#居中布局"><span class="nav-number">1.1.</span> <span class="nav-text">居中布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#平行"><span class="nav-number">1.1.1.</span> <span class="nav-text">平行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#垂直居中"><span class="nav-number">1.1.2.</span> <span class="nav-text">垂直居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#水平垂直"><span class="nav-number">1.1.3.</span> <span class="nav-text">水平垂直</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS3新增"><span class="nav-number">1.1.4.</span> <span class="nav-text">CSS3新增</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多列布局"><span class="nav-number">1.2.</span> <span class="nav-text">多列布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#定宽-自适应"><span class="nav-number">1.2.1.</span> <span class="nav-text">定宽+自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不定-自适应"><span class="nav-number">1.2.2.</span> <span class="nav-text">不定+自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#等分"><span class="nav-number">1.2.3.</span> <span class="nav-text">等分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#等高"><span class="nav-number">1.2.4.</span> <span class="nav-text">等高</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#响应式"><span class="nav-number">2.</span> <span class="nav-text">响应式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#viewpoint"><span class="nav-number">2.1.</span> <span class="nav-text">viewpoint</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#media"><span class="nav-number">2.2.</span> <span class="nav-text">@media</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#页面优化"><span class="nav-number">3.</span> <span class="nav-text">页面优化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#规范"><span class="nav-number">4.</span> <span class="nav-text">规范</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git命令"><span class="nav-number">5.</span> <span class="nav-text">git命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#git-config"><span class="nav-number">5.1.</span> <span class="nav-text">git config</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-status"><span class="nav-number">5.2.</span> <span class="nav-text">git status</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-add"><span class="nav-number">5.3.</span> <span class="nav-text">git add</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-rm"><span class="nav-number">5.4.</span> <span class="nav-text">git rm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-commit"><span class="nav-number">5.5.</span> <span class="nav-text">git commit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-log"><span class="nav-number">5.6.</span> <span class="nav-text">git-log</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#git-diff"><span class="nav-number">5.7.</span> <span class="nav-text">git diff</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#改动"><span class="nav-number">5.8.</span> <span class="nav-text">改动</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#git分支操作"><span class="nav-number">6.</span> <span class="nav-text">git分支操作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#远程操作"><span class="nav-number">7.</span> <span class="nav-text">远程操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doug Flands</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.0"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'flands-1';
+      var disqus_identifier = '2017/05/20/14.架构/';
+
+      var disqus_title = "页面架构笔记";
+
+
+      function run_disqus_script(disqus_script) {
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      }
+
+      run_disqus_script('count.js');
+
+      
+        var disqus_config = function () {
+            this.page.url = disqus_url;
+            this.page.identifier = disqus_identifier;
+            this.page.title = disqus_title;
+        };
+        run_disqus_script('embed.js');
+      
+
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+
+</body>
+</html>
