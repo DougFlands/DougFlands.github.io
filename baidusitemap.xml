@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://flands.com/2018/11/15/30.docker/</loc>
+    <lastmod>2018-11-15T15:04:09.327Z</lastmod>
+    <data>
+        <display>
+        <title>在docker中跑nginx,gogs,mysql服务</title>
+        <pubTime>2018-11-15T15:04:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://flands.com/2018/11/06/29.%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91/</loc>
     <lastmod>2018-11-06T14:48:08.247Z</lastmod>
     <data>
@@ -76,23 +91,6 @@
         <tag>JS</tag>
          
         <tag>Vue</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://flands.com/2017/12/07/23.electron%E5%85%A5%E6%89%8B/</loc>
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>Electron入手</title>
-        <pubTime>2017-12-07T07:17:00.000Z</pubTime>
-        
-        <tag>vue</tag>
          
          
            
@@ -265,14 +263,14 @@
 
     
   <url>
-    <loc>http://flands.com/2017/05/15/11.hasOwnProperty/</loc>
+    <loc>http://flands.com/2017/12/07/23.electron%E5%85%A5%E6%89%8B/</loc>
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     <data>
         <display>
-        <title>hasOwnProperty被遮蔽的问题</title>
-        <pubTime>2017-05-15T04:54:00.000Z</pubTime>
+        <title>Electron入手</title>
+        <pubTime>2017-12-07T07:17:00.000Z</pubTime>
         
-        <tag>JS</tag>
+        <tag>vue</tag>
          
          
            
@@ -282,14 +280,14 @@
 
     
   <url>
-    <loc>http://flands.com/2016/09/12/0.%E5%81%A5%E8%BA%AB/</loc>
+    <loc>http://flands.com/2017/05/15/11.hasOwnProperty/</loc>
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     <data>
         <display>
-        <title>健身</title>
-        <pubTime>2016-09-12T12:16:00.000Z</pubTime>
+        <title>hasOwnProperty被遮蔽的问题</title>
+        <pubTime>2017-05-15T04:54:00.000Z</pubTime>
         
-        <tag>杂谈</tag>
+        <tag>JS</tag>
          
          
            
@@ -316,14 +314,14 @@
 
     
   <url>
-    <loc>http://flands.com/2015/10/29/1.SS/</loc>
+    <loc>http://flands.com/2016/09/12/0.%E5%81%A5%E8%BA%AB/</loc>
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     <data>
         <display>
-        <title>SS&AC简易手册</title>
-        <pubTime>2015-10-29T14:28:00.000Z</pubTime>
+        <title>健身</title>
+        <pubTime>2016-09-12T12:16:00.000Z</pubTime>
         
-        <tag>SS</tag>
+        <tag>杂谈</tag>
          
          
            
@@ -333,14 +331,14 @@
 
     
   <url>
-    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
+    <loc>http://flands.com/2015/10/29/1.SS/</loc>
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     <data>
         <display>
-        <title>Git代理设置</title>
-        <pubTime>2017-05-22T10:19:00.000Z</pubTime>
+        <title>SS&AC简易手册</title>
+        <pubTime>2015-10-29T14:28:00.000Z</pubTime>
         
-        <tag>Git</tag>
+        <tag>SS</tag>
          
          
            
@@ -384,6 +382,23 @@
 
     
   <url>
+    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>Git代理设置</title>
+        <pubTime>2017-05-22T10:19:00.000Z</pubTime>
+        
+        <tag>Git</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://flands.com/2017/05/20/13.DOM%E8%89%BA%E6%9C%AF/</loc>
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     <data>
@@ -394,23 +409,6 @@
         <tag>JS</tag>
          
         <tag>DOM</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://flands.com/2017/07/12/15.JS%20this%E6%8C%87%E5%90%91/</loc>
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>JS this指向</title>
-        <pubTime>2017-07-12T13:54:00.000Z</pubTime>
-        
-        <tag>JS</tag>
          
          
            
@@ -515,6 +513,23 @@
         <pubTime>2017-05-13T01:35:00.000Z</pubTime>
         
         <tag>CSS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://flands.com/2017/07/12/15.JS%20this%E6%8C%87%E5%90%91/</loc>
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>JS this指向</title>
+        <pubTime>2017-07-12T13:54:00.000Z</pubTime>
+        
+        <tag>JS</tag>
          
          
            

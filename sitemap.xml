@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://flands.com/2018/11/15/30.docker/</loc>
+    
+    <lastmod>2018-11-15T15:04:09.327Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://flands.com/2018/11/06/29.%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91/</loc>
     
     <lastmod>2018-11-06T14:48:08.247Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>http://flands.com/2018/04/15/19.Vue/</loc>
     
     <lastmod>2018-04-15T11:31:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2017/12/07/23.electron%E5%85%A5%E6%89%8B/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
   </url>
   
@@ -107,14 +107,14 @@
   </url>
   
   <url>
-    <loc>http://flands.com/2017/05/15/11.hasOwnProperty/</loc>
+    <loc>http://flands.com/2017/12/07/23.electron%E5%85%A5%E6%89%8B/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://flands.com/2016/09/12/0.%E5%81%A5%E8%BA%AB/</loc>
+    <loc>http://flands.com/2017/05/15/11.hasOwnProperty/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
@@ -128,14 +128,14 @@
   </url>
   
   <url>
-    <loc>http://flands.com/2015/10/29/1.SS/</loc>
+    <loc>http://flands.com/2016/09/12/0.%E5%81%A5%E8%BA%AB/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
+    <loc>http://flands.com/2015/10/29/1.SS/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
@@ -156,14 +156,14 @@
   </url>
   
   <url>
-    <loc>http://flands.com/2017/05/20/13.DOM%E8%89%BA%E6%9C%AF/</loc>
+    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://flands.com/2017/07/12/15.JS%20this%E6%8C%87%E5%90%91/</loc>
+    <loc>http://flands.com/2017/05/20/13.DOM%E8%89%BA%E6%9C%AF/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
@@ -206,6 +206,13 @@
   
   <url>
     <loc>http://flands.com/2017/05/13/9.PS+HTML+CSS/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/07/12/15.JS%20this%E6%8C%87%E5%90%91/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
