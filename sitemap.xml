@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://flands.com/2018/11/28/31.js/</loc>
+    
+    <lastmod>2018-11-27T16:14:10.028Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://flands.com/2018/11/20/30.docker/</loc>
     
     <lastmod>2018-11-19T23:59:39.861Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://flands.com/2018/04/15/19.Vue/</loc>
     
     <lastmod>2018-04-15T11:31:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2017/05/15/10.JS%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
   </url>
   
@@ -213,6 +213,13 @@
   
   <url>
     <loc>http://flands.com/2017/07/12/15.JS%20this%E6%8C%87%E5%90%91/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/05/15/10.JS%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     

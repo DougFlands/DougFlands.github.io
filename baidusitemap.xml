@@ -4,6 +4,21 @@
 
     
   <url>
+    <loc>http://flands.com/2018/11/28/31.js/</loc>
+    <lastmod>2018-11-27T16:14:10.028Z</lastmod>
+    <data>
+        <display>
+        <title>JS & Rx.js & HTTP</title>
+        <pubTime>2018-11-27T17:13:00.000Z</pubTime>
+        
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://flands.com/2018/11/20/30.docker/</loc>
     <lastmod>2018-11-19T23:59:39.861Z</lastmod>
     <data>
@@ -91,23 +106,6 @@
         <tag>JS</tag>
          
         <tag>Vue</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://flands.com/2017/05/15/10.JS%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    <data>
-        <display>
-        <title>JavaScript笔记</title>
-        <pubTime>2017-05-15T09:37:00.000Z</pubTime>
-        
-        <tag>JS</tag>
          
          
            
@@ -528,6 +526,23 @@
         <display>
         <title>JS this指向</title>
         <pubTime>2017-07-12T13:54:00.000Z</pubTime>
+        
+        <tag>JS</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://flands.com/2017/05/15/10.JS%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript笔记</title>
+        <pubTime>2017-05-15T09:37:00.000Z</pubTime>
         
         <tag>JS</tag>
          
