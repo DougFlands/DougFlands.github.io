@@ -1210,7 +1210,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-  <link itemprop="mainEntityOfPage" href="http://flands.com/2018/03/10/25.常用代码片段/">
+  <link itemprop="mainEntityOfPage" href="http://flands.com/2018/03/10/24.MongoDB/">
 
   <span style="display:none" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <meta itemprop="name" content="Doug Flands">
@@ -1235,8 +1235,8 @@
             
               
                 
-                <a class="post-title-link" href="/2018/03/10/25.常用代码片段/" itemprop="url">
-                  常用代码片段
+                <a class="post-title-link" href="/2018/03/10/24.MongoDB/" itemprop="url">
+                  MongoDB使用
                 </a>
               
             
@@ -1271,8 +1271,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/03/10/25.常用代码片段/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/10/25.常用代码片段/" itemprop="commentCount"></span>
+                <a href="/2018/03/10/24.MongoDB/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/03/10/24.MongoDB/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -1299,17 +1299,15 @@
 
       
         
-          <h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h3 id="遍历数组"><a href="#遍历数组" class="headerlink" title="遍历数组"></a>遍历数组</h3><p><code>[1, 2, 3].forEach((val, index) =&gt; console.log(val))</code></p>
-<h3 id="映射新数组"><a href="#映射新数组" class="headerlink" title="映射新数组"></a>映射新数组</h3><p><code>let arr = [1, 2, 3].map(v=&gt;v*2)</code></p>
-<h3 id="所有元素是否通过测试"><a href="#所有元素是否通过测试" class="headerlink" title="所有元素是否通过测试"></a>所有元素是否通过测试</h3><p><code>[1, 2, 3, 4].every(v=&gt;v&gt;3)</code></p>
-<h3 id="是否有元素通过测试"><a href="#是否有元素通过测试" class="headerlink" title="是否有元素通过测试"></a>是否有元素通过测试</h3><p><code>[1, 2, 3, 4].some(v=&gt;v&gt;3)</code></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/10/25.常用代码片段/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
+          
+            <h1 id="启动mongo"><a href="#启动mongo" class="headerlink" title="启动mongo"></a>启动mongo</h1><p>创建以下目录<br>|-data<br>|-etc<br> |-mongo.conf<br>|log  //非文件夹  </p>
+<p>mongo.conf<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#数据库路径</span><br><span class="line">dbpath=E:\Coding\react\app\server\db\data</span><br><span class="line">#日志输出文件路径</span><br><span class="line">logpath=E:\Coding\react\app\server\db\log</span><br><span class="line">#错误日志采用追加模式，配置这个选项后mongodb的日志会追加到现有的日志文件，而不是从新创建一个新文件</span><br><span class="line">logappend=true</span><br><span class="line">#启用日志文件，默认启用</span><br><span class="line">journal=true</span><br><span class="line">#这个选项可以过滤掉一些无用的日志信息，若需要调试使用请设置为false</span><br><span class="line">quiet=false</span><br><span class="line">#端口号 默认为27017</span><br><span class="line">port=27017</span><br><span class="line">#是否网页访问</span><br><span class="line">nohttpinterface = false</span><br><span class="line">#指定存储引擎（默认先不加此引擎，如果报错了，大家在加进去）</span><br><span class="line">#storageEngine=mmapv1</span><br></pre></td></tr></table></figure></p>
+<p>新建bat文件，扔目录下，输入<br><code>mongod.exe --config &quot;E:\Coding\react\app\server\db\etc\mongo.conf&quot;</code>  </p>
+<h1 id="使用adminMongo图形化数据库"><a href="#使用adminMongo图形化数据库" class="headerlink" title="使用adminMongo图形化数据库"></a>使用adminMongo图形化数据库</h1><p><code>npm install admin-mongo -g</code>
+在安装目录<code>C:\Users\62789\AppData\Roaming\npm\node_modules\admin-mongo</code>执行<code>npm start</code><br>或者直接在目录下新建bat，输入<code>npm start</code>，然后快捷方式到某个地方，直接运行</p>
+<h1 id="node-js"><a href="#node-js" class="headerlink" title="node.js"></a>node.js</h1><p>自动重启<br>安装nodemon<br><code>npm install nodemon -g</code><br><code>nodemon server.js</code>  </p>
+
+          
         
       
     </div>
