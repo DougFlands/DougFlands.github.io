@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://flands.com/2019/04/28/35.webpack%201/</loc>
+    
+    <lastmod>2019-04-28T15:26:05.662Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://flands.com/2018/10/25/27.%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2019-04-26T15:47:28.382Z</lastmod>
@@ -86,13 +93,6 @@
   </url>
   
   <url>
-    <loc>http://flands.com/2017/10/10/20.Vue%E6%90%AD%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://flands.com/2017/11/10/21.APIcloud%E8%AE%B0%E5%BD%95/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
@@ -128,14 +128,14 @@
   </url>
   
   <url>
-    <loc>http://flands.com/2017/05/15/10.JS%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
+    <loc>http://flands.com/2017/05/15/10.JS%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
@@ -248,6 +248,13 @@
   
   <url>
     <loc>http://flands.com/2015/11/18/2.My-tool/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/10/10/20.Vue%E6%90%AD%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     

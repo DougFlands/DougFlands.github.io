@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://flands.com/2019/04/28/35.webpack%201/</loc>
+    <lastmod>2019-04-28</lastmod>
+  </url>  <url>
     <loc>http://flands.com/2018/10/25/27.%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2019-04-26</lastmod>
   </url>  <url>
@@ -34,9 +37,6 @@
     <loc>http://flands.com/2018/04/15/19.Vue/</loc>
     <lastmod>2018-04-15</lastmod>
   </url>  <url>
-    <loc>http://flands.com/2017/10/10/20.Vue%E6%90%AD%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
-    <lastmod>2018-03-10</lastmod>
-  </url>  <url>
     <loc>http://flands.com/2017/11/10/21.APIcloud%E8%AE%B0%E5%BD%95/</loc>
     <lastmod>2018-03-10</lastmod>
   </url>  <url>
@@ -52,10 +52,10 @@
     <loc>http://flands.com/2017/12/01/22.Node-Express%E5%85%A5%E6%89%8B/</loc>
     <lastmod>2018-03-10</lastmod>
   </url>  <url>
-    <loc>http://flands.com/2017/05/15/10.JS%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
     <lastmod>2018-03-10</lastmod>
   </url>  <url>
-    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
+    <loc>http://flands.com/2017/05/15/10.JS%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2018-03-10</lastmod>
   </url>  <url>
     <loc>http://flands.com/2017/05/15/11.hasOwnProperty/</loc>
@@ -104,6 +104,9 @@
     <lastmod>2018-03-10</lastmod>
   </url>  <url>
     <loc>http://flands.com/2015/11/18/2.My-tool/</loc>
+    <lastmod>2018-03-10</lastmod>
+  </url>  <url>
+    <loc>http://flands.com/2017/10/10/20.Vue%E6%90%AD%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
     <lastmod>2018-03-10</lastmod>
   </url>
 </urlset>
