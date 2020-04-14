@@ -36,8 +36,9 @@
 </ul>
 <h2 id="本地搭建及K8S部署"><a href="#本地搭建及K8S部署" class="headerlink" title="本地搭建及K8S部署"></a>本地搭建及K8S部署</h2><h3 id="docker-设置"><a href="#docker-设置" class="headerlink" title="docker 设置"></a>docker 设置</h3><p>先从官网下载docker安装，windows用户必须是旗舰版以上，家庭版不能用。  </p>
 <blockquote>
-<p><a href="https://www.docker.com/" target="_blank" rel="noopener">https://www.docker.com/</a>
-安装后启动，小图标右键 - 设置，要修改的内容如下
+<p><a href="https://www.docker.com/" target="_blank" rel="noopener">https://www.docker.com/</a>  </p>
+</blockquote>
+<p>安装后启动，小图标右键 - 设置，要修改的内容如下
 Resources</p>
 <ul>
 <li>ADVANCED<ul>
@@ -58,7 +59,6 @@ Docker Engine</li>
 </ul>
 </li>
 </ul>
-</blockquote>
 <h2 id="file编写"><a href="#file编写" class="headerlink" title="file编写"></a>file编写</h2><p>部署docker后项目肯定要编写dockerfile，构建为镜像文件  </p>
 <h3 id="React前端"><a href="#React前端" class="headerlink" title="React前端"></a>React前端</h3><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> node:latest as builder</span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span> /usr/src/app</span><br><span class="line">USER root</span><br><span class="line"></span><br><span class="line">COPY . /usr/src/app</span><br><span class="line">RUN npm config set registry https://registry.npm.taobao.org  \</span><br><span class="line">  &amp;&amp; npm i \</span><br><span class="line">  &amp;&amp; npm run build</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">FROM nginx</span><br><span class="line"></span><br><span class="line">WORKDIR /usr/share/nginx/html/</span><br><span class="line">USER root</span><br><span class="line"></span><br><span class="line">COPY --from=builder /usr/src/app/docker/nginx.conf /etc/nginx/conf.d/default.conf</span><br><span class="line">COPY --from=builder /usr/src/app/dist  /usr/share/nginx/html/</span><br><span class="line"></span><br><span class="line">EXPOSE 80</span><br><span class="line">CMD ["nginx", "-g", "daemon off;"]</span><br></pre></td></tr></table></figure>
 <p>文件如上，放在根目录或者项目某个文件夹内。<br>逐行解释，有些命令相同的不重复解释  </p>
@@ -180,24 +180,22 @@ Docker Engine</li>
 <blockquote>
 <p><a href="https://flands.com/2018/11/20/30.docker">https://flands.com/2018/11/20/30.docker</a></p>
 </blockquote>
-<h1 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h1><h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>大陆用户因为众所周知的原因，这里k8s很难启动，所以需要特殊的方式。
-注意: 全程不要挂代理！全程不要挂代理！全程不要挂代理！否则k8s访问本地服务会出问题！<br>中途有错误可以在<code>C:\ProgramData\DockerDesktop/service.txt</code>里找到报错，如果出现访问网址404的错误，把代理关掉。  </p>
+<h1 id="Kubernetes"><a href="#Kubernetes" class="headerlink" title="Kubernetes"></a>Kubernetes</h1><h2 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h2><p>大陆用户因为众所周知的原因，这里k8s很难启动，所以需要特殊的方式。<br>注意: 全程不要挂代理！全程不要挂代理！全程不要挂代理！否则k8s访问本地服务会出问题！<br>中途有错误可以在<code>C:\ProgramData\DockerDesktop/service.txt</code>里找到报错，如果出现访问网址404的错误，把代理关掉。  </p>
 <ol>
-<li><p>按照链接让k8s启动，能启动就可以了
-<code>https://github.com/AliyunContainerService/k8s-for-docker-desktop</code>  </p>
-</li>
-<li><p>部署dashboard
-命令行可能出现403验证的问题，可以将文件下载下来执行。<br>recommended 版本会变化，项目地址如下，在releases里查找对应docker的版本</p>
+<li><p>按照链接让k8s启动，能启动就可以了  </p>
 <blockquote>
-<p><a href="https://github.com/kubernetes/dashboard" target="_blank" rel="noopener">https://github.com/kubernetes/dashboard</a>
-<code>kubectl create -f .\recommendedv.yaml</code><br>部署token，这个是创建admin-user<br>dashboard-adminuser.yaml  </p>
-<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">admin-user</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">kube-system</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">rbac.authorization.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ClusterRoleBinding</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">admin-user</span></span><br><span class="line"><span class="attr">roleRef:</span></span><br><span class="line"><span class="attr">  apiGroup:</span> <span class="string">rbac.authorization.k8s.io</span></span><br><span class="line"><span class="attr">  kind:</span> <span class="string">ClusterRole</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">cluster-admin</span></span><br><span class="line"><span class="attr">subjects:</span></span><br><span class="line"><span class="attr">- kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">admin-user</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">kube-system</span></span><br></pre></td></tr></table></figure>
+<p><a href="https://github.com/AliyunContainerService/k8s-for-docker-desktop" target="_blank" rel="noopener">https://github.com/AliyunContainerService/k8s-for-docker-desktop</a></p>
 </blockquote>
 </li>
+<li><p>部署dashboard<br>命令行可能出现403验证的问题，可以将文件下载下来执行。<br>recommended 版本会变化，项目地址如下，在releases里查找对应docker的版本</p>
+</li>
 </ol>
+<blockquote>
+<p><a href="https://github.com/kubernetes/dashboard" target="_blank" rel="noopener">https://github.com/kubernetes/dashboard</a></p>
+</blockquote>
+<p><code>kubectl create -f .\recommendedv.yaml</code><br>部署token，这个是创建admin-user<br>dashboard-adminuser.yaml<br><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">apiVersion:</span> <span class="string">v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">admin-user</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">kube-system</span></span><br><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">apiVersion:</span> <span class="string">rbac.authorization.k8s.io/v1</span></span><br><span class="line"><span class="attr">kind:</span> <span class="string">ClusterRoleBinding</span></span><br><span class="line"><span class="attr">metadata:</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">admin-user</span></span><br><span class="line"><span class="attr">roleRef:</span></span><br><span class="line"><span class="attr">  apiGroup:</span> <span class="string">rbac.authorization.k8s.io</span></span><br><span class="line"><span class="attr">  kind:</span> <span class="string">ClusterRole</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">cluster-admin</span></span><br><span class="line"><span class="attr">subjects:</span></span><br><span class="line"><span class="attr">- kind:</span> <span class="string">ServiceAccount</span></span><br><span class="line"><span class="attr">  name:</span> <span class="string">admin-user</span></span><br><span class="line"><span class="attr">  namespace:</span> <span class="string">kube-system</span></span><br></pre></td></tr></table></figure></p>
 <p><code>kubectl create -f .\dashboard-adminuser.yaml</code>  </p>
-<p>查看 Token  找到 admin-user-token
-<code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &#39;{print $1}&#39;)</code><br>开启服务<br><code>kubectl proxy</code>  </p>
+<p>查看 Token  找到 admin-user-token<br><code>kubectl -n kube-system describe secret $(kubectl -n kube-system get secret | grep admin-user | awk &#39;{print $1}&#39;)</code><br>开启服务<br><code>kubectl proxy</code>  </p>
 <p>dashboard有v2版本，查看地址有两种<br>v1<br><code>http://localhost:8001/api/v1/namespaces/kube-system/services/https:kubernetes-dashboard:/proxy/</code><br>v2<br><code>http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/</code>  </p>
 <p>查看服务，可能用到<br><code>kubectl get pods,svc --all-namespaces -o wide</code>  </p>
 <p>至此k8s应该可以访问了。</p>
