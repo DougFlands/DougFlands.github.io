@@ -2,163 +2,177 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://flands.com/2020/04/13/45.%E4%BB%8Edocker%20%E5%88%B0%20k8s/</loc>
+    <loc>http://flands.com/2020/05/16/46.%E4%BD%BF%E7%94%A8docker%E6%9E%84%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
     
-    <lastmod>2020-04-14T03:14:39.389Z</lastmod>
+    <lastmod>2020-06-25T07:37:58.381Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://flands.com/2020/04/13/46.%E4%BD%BF%E7%94%A8docker%E6%9E%84%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
+    <loc>http://flands.com/2020/06/25/48.webp%20%E6%A0%BC%E5%BC%8F%E5%9C%A8%20safari%20%E4%B8%8B%E5%85%BC%E5%AE%B9/</loc>
     
-    <lastmod>2020-04-14T03:07:11.871Z</lastmod>
+    <lastmod>2020-06-25T07:35:56.677Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2020/06/25/47.electron%20%E5%A2%9E%E9%87%8F%E4%B8%8E%E5%85%A8%E9%87%8F%E6%9B%B4%E6%96%B0/</loc>
+    
+    <lastmod>2020-06-25T07:35:02.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2020/04/13/45.%E4%BB%8Edocker%20%E5%88%B0%20k8s/</loc>
+    
+    <lastmod>2020-04-14T03:14:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2020/04/13/44.mysql%20%E4%B8%BB%E4%BB%8E%E6%90%AD%E5%BB%BA/</loc>
     
-    <lastmod>2020-04-13T04:16:58.743Z</lastmod>
+    <lastmod>2020-04-13T04:16:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2020/01/10/43.golang/</loc>
     
-    <lastmod>2020-04-13T03:40:07.329Z</lastmod>
+    <lastmod>2020-04-13T03:40:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/12/26/42.Vue%20computed%E5%8E%9F%E7%90%86/</loc>
     
-    <lastmod>2020-01-10T14:59:58.479Z</lastmod>
+    <lastmod>2020-01-10T14:59:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/08/02/27.%E8%AE%B0%E5%BD%95/</loc>
     
-    <lastmod>2019-12-31T04:01:48.425Z</lastmod>
+    <lastmod>2019-12-31T04:01:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/01/15/25.%E5%B8%B8%E7%94%A8%E4%BB%A3%E7%A0%81%E7%89%87%E6%AE%B5/</loc>
     
-    <lastmod>2019-12-31T04:01:18.367Z</lastmod>
+    <lastmod>2019-12-31T04:01:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/12/13/41.%E5%89%8D%E7%AB%AF%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/</loc>
     
-    <lastmod>2019-12-16T00:27:29.300Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2019/12/03/40.%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/</loc>
-    
-    <lastmod>2019-12-03T14:00:38.049Z</lastmod>
+    <lastmod>2019-12-16T00:27:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/12/01/39.%E5%BE%AE%E4%BF%A1%E5%88%86%E4%BA%AB%E7%9A%84%E5%9D%91/</loc>
     
-    <lastmod>2019-12-03T14:00:33.644Z</lastmod>
+    <lastmod>2019-12-03T14:00:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2019/12/03/40.%E5%89%8D%E7%AB%AF%E9%94%99%E8%AF%AF%E6%97%A5%E5%BF%97%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2019-12-03T14:00:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/08/10/38.%E5%B0%8F%E7%A8%8B%E5%BA%8Fevent/</loc>
     
-    <lastmod>2019-08-11T04:10:56.739Z</lastmod>
+    <lastmod>2019-08-11T04:10:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/07/10/37.webpack%E9%85%8D%E7%BD%AE/</loc>
     
-    <lastmod>2019-07-20T08:27:38.476Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2019/07/09/36.kubernetes%E5%B0%9D%E9%B2%9C%E5%B9%B6%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1/</loc>
-    
-    <lastmod>2019-07-09T16:03:31.657Z</lastmod>
+    <lastmod>2019-07-20T08:27:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/06/15/35.Vue,react%E5%8D%95%E9%A1%B5%E9%A1%B9%E7%9B%AE%E6%9B%B4%E6%96%B0%E5%90%8E%E7%9A%84%E7%99%BD%E5%B1%8F%E9%97%AE%E9%A2%98%EF%BC%8C%E5%8F%8A%E5%BE%AE%E4%BF%A1%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E5%9D%91%20-%20%E5%89%AF%E6%9C%AC/</loc>
     
-    <lastmod>2019-07-09T16:03:27.358Z</lastmod>
+    <lastmod>2019-07-09T16:03:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2019/07/09/36.kubernetes%E5%B0%9D%E9%B2%9C%E5%B9%B6%E6%90%AD%E5%BB%BA%E6%9C%8D%E5%8A%A1/</loc>
+    
+    <lastmod>2019-07-09T16:03:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/04/25/34.%E8%80%81%E9%A1%B9%E7%9B%AE%E5%8D%87%E7%BA%A7vue-cli3.0/</loc>
     
-    <lastmod>2019-04-26T15:44:00.197Z</lastmod>
+    <lastmod>2019-04-26T15:44:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/03/30/33.%E7%89%88%E6%9C%AC%E6%9B%B4%E6%96%B0%E9%97%AE%E9%A2%98/</loc>
     
-    <lastmod>2019-03-31T15:08:22.825Z</lastmod>
+    <lastmod>2019-03-31T15:08:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/manifest.json</loc>
     
-    <lastmod>2019-03-12T13:44:13.782Z</lastmod>
+    <lastmod>2019-03-12T13:44:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2019/01/22/32.Vue%E7%BC%93%E5%AD%98%E6%95%B0%E6%8D%AE%E5%B9%B6%E6%BB%9A%E5%8A%A8%E5%88%B0%E5%88%97%E8%A1%A8/</loc>
     
-    <lastmod>2019-03-11T15:05:11.194Z</lastmod>
+    <lastmod>2019-03-11T15:05:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2018/03/10/24.MongoDB/</loc>
     
-    <lastmod>2018-12-02T14:25:41.538Z</lastmod>
+    <lastmod>2018-12-02T14:25:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2018/11/28/31.js/</loc>
     
-    <lastmod>2018-11-27T16:14:10.028Z</lastmod>
+    <lastmod>2018-11-27T16:14:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2018/11/20/30.docker/</loc>
     
-    <lastmod>2018-11-19T23:59:39.861Z</lastmod>
+    <lastmod>2018-11-19T23:59:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2018/11/06/29.%E6%9D%A1%E4%BB%B6%E7%BC%96%E8%AF%91/</loc>
     
-    <lastmod>2018-11-06T14:48:08.247Z</lastmod>
+    <lastmod>2018-11-06T14:48:00.000Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://flands.com/2018/10/25/28.svg%20icon/</loc>
     
-    <lastmod>2018-10-24T16:31:19.715Z</lastmod>
+    <lastmod>2018-10-24T16:31:00.000Z</lastmod>
     
   </url>
   
@@ -177,84 +191,7 @@
   </url>
   
   <url>
-    <loc>http://flands.com/2015/11/18/2.My-tool/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2017/11/10/21.APIcloud%E8%AE%B0%E5%BD%95/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2017/10/10/20.Vue%E6%90%AD%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2017/12/07/23.electron%E5%85%A5%E6%89%8B/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2016/09/12/0.%E5%81%A5%E8%BA%AB/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2015/11/03/4.Google%E6%8B%BC%E9%9F%B3%E7%9A%84%E6%90%9C%E7%8B%97%E7%9A%AE%E8%82%A4/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2017/05/15/11.hasOwnProperty/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2016/01/04/5.WIN10%E4%B8%80%E6%AC%A1%E9%94%99%E8%AF%AF%E5%85%B3%E6%9C%BA%E5%AF%BC%E8%87%B40xc000000e%E9%94%99%E8%AF%AF/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2016/05/11/6.%E6%90%AD%E5%BB%BAMineCraft%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2017/05/07/8.Npm/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2017/05/20/13.DOM%E8%89%BA%E6%9C%AF/</loc>
+    <loc>http://flands.com/2015/10/29/1.SS/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
@@ -268,21 +205,35 @@
   </url>
   
   <url>
-    <loc>http://flands.com/2015/10/30/7.hexo%E6%90%AD%E5%BB%BA/</loc>
+    <loc>http://flands.com/2017/05/15/11.hasOwnProperty/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://flands.com/2017/05/13/9.PS+HTML+CSS/</loc>
+    <loc>http://flands.com/2016/09/12/0.%E5%81%A5%E8%BA%AB/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://flands.com/2017/12/01/22.Node-Express%E5%85%A5%E6%89%8B/</loc>
+    <loc>http://flands.com/2017/05/20/13.DOM%E8%89%BA%E6%9C%AF/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/07/25/16.SASS%E9%83%A8%E5%88%86%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
@@ -303,21 +254,14 @@
   </url>
   
   <url>
-    <loc>http://flands.com/2017/07/25/16.SASS%E9%83%A8%E5%88%86%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2015/12/02/3.%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D/</loc>
-    
-    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://flands.com/2017/07/25/17.hexo-admin/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/10/10/20.Vue%E6%90%AD%E5%BB%BA%E9%98%BF%E9%87%8C%E4%BA%91/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
@@ -331,7 +275,77 @@
   </url>
   
   <url>
-    <loc>http://flands.com/2015/10/29/1.SS/</loc>
+    <loc>http://flands.com/2017/11/10/21.APIcloud%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2015/11/18/2.My-tool/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/12/01/22.Node-Express%E5%85%A5%E6%89%8B/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/12/07/23.electron%E5%85%A5%E6%89%8B/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2015/12/02/3.%E8%B4%AD%E4%B9%B0%E5%9F%9F%E5%90%8D/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2015/11/03/4.Google%E6%8B%BC%E9%9F%B3%E7%9A%84%E6%90%9C%E7%8B%97%E7%9A%AE%E8%82%A4/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2016/01/04/5.WIN10%E4%B8%80%E6%AC%A1%E9%94%99%E8%AF%AF%E5%85%B3%E6%9C%BA%E5%AF%BC%E8%87%B40xc000000e%E9%94%99%E8%AF%AF/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2015/10/30/7.hexo%E6%90%AD%E5%BB%BA/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2016/05/11/6.%E6%90%AD%E5%BB%BAMineCraft%E6%9C%8D%E5%8A%A1%E5%99%A8/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/05/13/9.PS+HTML+CSS/</loc>
+    
+    <lastmod>2018-03-10T14:25:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://flands.com/2017/05/07/8.Npm/</loc>
     
     <lastmod>2018-03-10T14:25:00.000Z</lastmod>
     
