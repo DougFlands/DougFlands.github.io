@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://flands.com/2019/08/02/27.%E8%AE%B0%E5%BD%95/</loc>
+    
+    <lastmod>2020-07-25T07:06:17.620Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://flands.com/2020/05/16/46.%E4%BD%BF%E7%94%A8docker%E6%9E%84%E5%BB%BA%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
     
     <lastmod>2020-06-25T07:37:58.381Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://flands.com/2019/12/26/42.Vue%20computed%E5%8E%9F%E7%90%86/</loc>
     
     <lastmod>2020-01-10T14:59:00.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://flands.com/2019/08/02/27.%E8%AE%B0%E5%BD%95/</loc>
-    
-    <lastmod>2019-12-31T04:01:00.000Z</lastmod>
     
   </url>
   
