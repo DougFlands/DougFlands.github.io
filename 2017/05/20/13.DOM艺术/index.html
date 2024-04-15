@@ -1,4 +1,4 @@
-<!DOCTYPE html><html lang="zh-Hans"><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="DOM操作笔记"><meta name="keywords" content="JS,DOM"><meta name="author" content="Doug Flands"><meta name="copyright" content="Doug Flands"><title>DOM操作笔记 | Flands Blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.6.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.6.1"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css?version=1.6.1"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="manifest" href="/manifest.json"><link rel="manifest" href="/manifest.json"><script>var GLOBAL_CONFIG = { 
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="DOM操作笔记"><meta name="keywords" content="JS,DOM"><meta name="author" content="Doug Flands"><meta name="copyright" content="Doug Flands"><title>DOM操作笔记 | Flands Blog</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.9.1"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.9.1"><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css?version=1.9.1"><meta name="format-detection" content="telephone=no"><meta http-equiv="x-dns-prefetch-control" content="on"><link rel="dns-prefetch" href="https://cdn.jsdelivr.net"><link rel="manifest" href="/manifest.json"><link rel="manifest" href="/manifest.json"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><script>var GLOBAL_CONFIG = { 
   root: '/',
   algolia: undefined,
   localSearch: undefined,
@@ -6,9 +6,11 @@
     success: '复制成功',
     error: '复制错误',
     noSupport: '浏览器不支持'
-  }
-} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#文档树"><span class="toc-number">1.</span> <span class="toc-text">文档树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#节点遍历"><span class="toc-number">1.1.</span> <span class="toc-text">节点遍历</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#节点操作"><span class="toc-number">2.</span> <span class="toc-text">节点操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#获取节点-Element"><span class="toc-number">2.1.</span> <span class="toc-text">获取节点(Element)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#参数说明"><span class="toc-number">2.1.1.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#节点"><span class="toc-number">2.2.</span> <span class="toc-text">节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建节点流程"><span class="toc-number">2.2.1.</span> <span class="toc-text">创建节点流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#innertext兼容"><span class="toc-number">2.2.2.</span> <span class="toc-text">innertext兼容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#节点属性"><span class="toc-number">3.</span> <span class="toc-text">节点属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#属性"><span class="toc-number">3.0.1.</span> <span class="toc-text">属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性异常-CSS对应JS"><span class="toc-number">3.1.</span> <span class="toc-text">属性异常(CSS对应JS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-1"><span class="toc-number">3.2.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#读取"><span class="toc-number">3.2.1.</span> <span class="toc-text">读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#写"><span class="toc-number">3.2.2.</span> <span class="toc-text">写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#类型"><span class="toc-number">3.2.3.</span> <span class="toc-text">类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#属性操作"><span class="toc-number">3.3.</span> <span class="toc-text">属性操作</span></a></li></ol><li class="toc-item toc-level-1"><a class="toc-link" href="#dataset自定义属性"><span class="toc-number">4.</span> <span class="toc-text">dataset自定义属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#样式操作"><span class="toc-number">5.</span> <span class="toc-text">样式操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#样式"><span class="toc-number">5.1.</span> <span class="toc-text">样式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#实例"><span class="toc-number">6.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM事件"><span class="toc-number">7.</span> <span class="toc-text">DOM事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#事件流"><span class="toc-number">7.1.</span> <span class="toc-text">事件流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件注册与触发"><span class="toc-number">7.2.</span> <span class="toc-text">事件注册与触发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件对象"><span class="toc-number">7.3.</span> <span class="toc-text">事件对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MouseEvent"><span class="toc-number">7.3.1.</span> <span class="toc-text">MouseEvent</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#属性-2"><span class="toc-number">7.3.1.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#顺序"><span class="toc-number">7.3.1.2.</span> <span class="toc-text">顺序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WheelEvent滚轮"><span class="toc-number">7.3.2.</span> <span class="toc-text">WheelEvent滚轮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FocusEvent焦点"><span class="toc-number">7.3.3.</span> <span class="toc-text">FocusEvent焦点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InputEvent输入事件"><span class="toc-number">7.3.4.</span> <span class="toc-text">InputEvent输入事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KeyboardEvent-键盘事件"><span class="toc-number">7.3.5.</span> <span class="toc-text">KeyboardEvent 键盘事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Event"><span class="toc-number">7.3.6.</span> <span class="toc-text">Event</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIEvent"><span class="toc-number">7.3.7.</span> <span class="toc-text">UIEvent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件代理"><span class="toc-number">7.4.</span> <span class="toc-text">事件代理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据通信"><span class="toc-number">8.</span> <span class="toc-text">数据通信</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用HTTP方法"><span class="toc-number">8.1.</span> <span class="toc-text">常用HTTP方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP状态码"><span class="toc-number">8.2.</span> <span class="toc-text">HTTP状态码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax"><span class="toc-number">8.3.</span> <span class="toc-text">Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#方法"><span class="toc-number">8.3.1.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#请求参数序列化"><span class="toc-number">8.3.2.</span> <span class="toc-text">请求参数序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#同源策略"><span class="toc-number">8.3.3.</span> <span class="toc-text">同源策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域资源访问"><span class="toc-number">8.3.4.</span> <span class="toc-text">跨域资源访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他跨域"><span class="toc-number">8.3.5.</span> <span class="toc-text">其他跨域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#数据存储"><span class="toc-number">9.</span> <span class="toc-text">数据存储</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie转为对象"><span class="toc-number">9.1.</span> <span class="toc-text">cookie转为对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie增加"><span class="toc-number">9.2.</span> <span class="toc-text">cookie增加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie删除"><span class="toc-number">9.3.</span> <span class="toc-text">cookie删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#缺陷"><span class="toc-number">9.4.</span> <span class="toc-text">缺陷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#storage-替代cookie"><span class="toc-number">9.5.</span> <span class="toc-text">storage(替代cookie)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS对象"><span class="toc-number">9.5.1.</span> <span class="toc-text">JS对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-number">9.5.2.</span> <span class="toc-text">API</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JS动画"><span class="toc-number">10.</span> <span class="toc-text">JS动画</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#定时器"><span class="toc-number">10.1.</span> <span class="toc-text">定时器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#多媒体和图形"><span class="toc-number">11.</span> <span class="toc-text">多媒体和图形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#常用HTML属性"><span class="toc-number">11.1.</span> <span class="toc-text">常用HTML属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#控制多媒体"><span class="toc-number">11.2.</span> <span class="toc-text">控制多媒体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询多媒体"><span class="toc-number">11.3.</span> <span class="toc-text">查询多媒体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#相关事件"><span class="toc-number">11.4.</span> <span class="toc-text">相关事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#canvas"><span class="toc-number">12.</span> <span class="toc-text">canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#流程"><span class="toc-number">12.1.</span> <span class="toc-text">流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BOM"><span class="toc-number">13.</span> <span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#属性-3"><span class="toc-number">13.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#方法-1"><span class="toc-number">13.2.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#窗口"><span class="toc-number">13.3.</span> <span class="toc-text">窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件"><span class="toc-number">13.4.</span> <span class="toc-text">事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#表单操作"><span class="toc-number">14.</span> <span class="toc-text">表单操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#验证表单"><span class="toc-number">14.1.</span> <span class="toc-text">验证表单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#form"><span class="toc-number">14.2.</span> <span class="toc-text">form</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#select"><span class="toc-number">14.3.</span> <span class="toc-text">select</span></a></li></ol></li></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://flands.com/avatar/192.jpg"></div><div class="author-info__name text-center">Doug Flands</div><div class="author-info__description text-center">Flands</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">54</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">19</span></a></div></div></div><div id="content-outer"><div class="plain" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Flands Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a></span></div></div><div class="layout" id="content-inner"><article id="post"><div class="plain" id="post-title">DOM操作笔记</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2017-05-20</time></div><div class="article-container" id="post-content"><p>DOM学习笔记</p>
-<a id="more"></a>
+  },
+  hexoVersion: '7.1.1'
+} </script><meta name="generator" content="Hexo 7.1.1"></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar" data-display="true"><div class="toggle-sidebar-info text-center"><span data-toggle="切换文章详情">切换站点概览</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">目录</div><div class="sidebar-toc__progress"><span class="progress-notice">你已经读了</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E6%A1%A3%E6%A0%91"><span class="toc-number">1.</span> <span class="toc-text">文档树</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E9%81%8D%E5%8E%86"><span class="toc-number">1.1.</span> <span class="toc-text">节点遍历</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E6%93%8D%E4%BD%9C"><span class="toc-number">2.</span> <span class="toc-text">节点操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E8%8A%82%E7%82%B9-Element"><span class="toc-number">2.1.</span> <span class="toc-text">获取节点(Element)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-number">2.1.1.</span> <span class="toc-text">参数说明</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%8A%82%E7%82%B9"><span class="toc-number">2.2.</span> <span class="toc-text">节点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E8%8A%82%E7%82%B9%E6%B5%81%E7%A8%8B"><span class="toc-number">2.2.1.</span> <span class="toc-text">创建节点流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#innertext%E5%85%BC%E5%AE%B9"><span class="toc-number">2.2.2.</span> <span class="toc-text">innertext兼容</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%8A%82%E7%82%B9%E5%B1%9E%E6%80%A7"><span class="toc-number">3.</span> <span class="toc-text">节点属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7"><span class="toc-number">3.0.1.</span> <span class="toc-text">属性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E5%BC%82%E5%B8%B8-CSS%E5%AF%B9%E5%BA%94JS"><span class="toc-number">3.1.</span> <span class="toc-text">属性异常(CSS对应JS)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7-1"><span class="toc-number">3.2.</span> <span class="toc-text">属性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%BB%E5%8F%96"><span class="toc-number">3.2.1.</span> <span class="toc-text">读取</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%99"><span class="toc-number">3.2.2.</span> <span class="toc-text">写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.2.3.</span> <span class="toc-text">类型</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7%E6%93%8D%E4%BD%9C"><span class="toc-number">3.3.</span> <span class="toc-text">属性操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#dataset%E8%87%AA%E5%AE%9A%E4%B9%89%E5%B1%9E%E6%80%A7"><span class="toc-number">4.</span> <span class="toc-text">dataset自定义属性</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F%E6%93%8D%E4%BD%9C"><span class="toc-number">5.</span> <span class="toc-text">样式操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E5%BC%8F"><span class="toc-number">5.1.</span> <span class="toc-text">样式</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B"><span class="toc-number">6.</span> <span class="toc-text">实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DOM%E4%BA%8B%E4%BB%B6"><span class="toc-number">7.</span> <span class="toc-text">DOM事件</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E6%B5%81"><span class="toc-number">7.1.</span> <span class="toc-text">事件流</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E6%B3%A8%E5%86%8C%E4%B8%8E%E8%A7%A6%E5%8F%91"><span class="toc-number">7.2.</span> <span class="toc-text">事件注册与触发</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%AF%B9%E8%B1%A1"><span class="toc-number">7.3.</span> <span class="toc-text">事件对象</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MouseEvent"><span class="toc-number">7.3.1.</span> <span class="toc-text">MouseEvent</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7-2"><span class="toc-number">7.3.1.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%A1%BA%E5%BA%8F"><span class="toc-number">7.3.1.2.</span> <span class="toc-text">顺序</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WheelEvent%E6%BB%9A%E8%BD%AE"><span class="toc-number">7.3.2.</span> <span class="toc-text">WheelEvent滚轮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FocusEvent%E7%84%A6%E7%82%B9"><span class="toc-number">7.3.3.</span> <span class="toc-text">FocusEvent焦点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#InputEvent%E8%BE%93%E5%85%A5%E4%BA%8B%E4%BB%B6"><span class="toc-number">7.3.4.</span> <span class="toc-text">InputEvent输入事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#KeyboardEvent-%E9%94%AE%E7%9B%98%E4%BA%8B%E4%BB%B6"><span class="toc-number">7.3.5.</span> <span class="toc-text">KeyboardEvent 键盘事件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Event"><span class="toc-number">7.3.6.</span> <span class="toc-text">Event</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#UIEvent"><span class="toc-number">7.3.7.</span> <span class="toc-text">UIEvent</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E4%BB%A3%E7%90%86"><span class="toc-number">7.4.</span> <span class="toc-text">事件代理</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1"><span class="toc-number">8.</span> <span class="toc-text">数据通信</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8HTTP%E6%96%B9%E6%B3%95"><span class="toc-number">8.1.</span> <span class="toc-text">常用HTTP方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HTTP%E7%8A%B6%E6%80%81%E7%A0%81"><span class="toc-number">8.2.</span> <span class="toc-text">HTTP状态码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Ajax"><span class="toc-number">8.3.</span> <span class="toc-text">Ajax</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-number">8.3.1.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%B7%E6%B1%82%E5%8F%82%E6%95%B0%E5%BA%8F%E5%88%97%E5%8C%96"><span class="toc-number">8.3.2.</span> <span class="toc-text">请求参数序列化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E6%BA%90%E7%AD%96%E7%95%A5"><span class="toc-number">8.3.3.</span> <span class="toc-text">同源策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B7%A8%E5%9F%9F%E8%B5%84%E6%BA%90%E8%AE%BF%E9%97%AE"><span class="toc-number">8.3.4.</span> <span class="toc-text">跨域资源访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E8%B7%A8%E5%9F%9F"><span class="toc-number">8.3.5.</span> <span class="toc-text">其他跨域</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%AD%98%E5%82%A8"><span class="toc-number">9.</span> <span class="toc-text">数据存储</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie%E8%BD%AC%E4%B8%BA%E5%AF%B9%E8%B1%A1"><span class="toc-number">9.1.</span> <span class="toc-text">cookie转为对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie%E5%A2%9E%E5%8A%A0"><span class="toc-number">9.2.</span> <span class="toc-text">cookie增加</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#cookie%E5%88%A0%E9%99%A4"><span class="toc-number">9.3.</span> <span class="toc-text">cookie删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%BA%E9%99%B7"><span class="toc-number">9.4.</span> <span class="toc-text">缺陷</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#storage-%E6%9B%BF%E4%BB%A3cookie"><span class="toc-number">9.5.</span> <span class="toc-text">storage(替代cookie)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS%E5%AF%B9%E8%B1%A1"><span class="toc-number">9.5.1.</span> <span class="toc-text">JS对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API"><span class="toc-number">9.5.2.</span> <span class="toc-text">API</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JS%E5%8A%A8%E7%94%BB"><span class="toc-number">10.</span> <span class="toc-text">JS动画</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%97%B6%E5%99%A8"><span class="toc-number">10.1.</span> <span class="toc-text">定时器</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%9A%E5%AA%92%E4%BD%93%E5%92%8C%E5%9B%BE%E5%BD%A2"><span class="toc-number">11.</span> <span class="toc-text">多媒体和图形</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8HTML%E5%B1%9E%E6%80%A7"><span class="toc-number">11.1.</span> <span class="toc-text">常用HTML属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%A4%9A%E5%AA%92%E4%BD%93"><span class="toc-number">11.2.</span> <span class="toc-text">控制多媒体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E8%AF%A2%E5%A4%9A%E5%AA%92%E4%BD%93"><span class="toc-number">11.3.</span> <span class="toc-text">查询多媒体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E4%BA%8B%E4%BB%B6"><span class="toc-number">11.4.</span> <span class="toc-text">相关事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#canvas"><span class="toc-number">12.</span> <span class="toc-text">canvas</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B5%81%E7%A8%8B"><span class="toc-number">12.1.</span> <span class="toc-text">流程</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#BOM"><span class="toc-number">13.</span> <span class="toc-text">BOM</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%9E%E6%80%A7-3"><span class="toc-number">13.1.</span> <span class="toc-text">属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95-1"><span class="toc-number">13.2.</span> <span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AA%97%E5%8F%A3"><span class="toc-number">13.3.</span> <span class="toc-text">窗口</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6"><span class="toc-number">13.4.</span> <span class="toc-text">事件</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%A1%A8%E5%8D%95%E6%93%8D%E4%BD%9C"><span class="toc-number">14.</span> <span class="toc-text">表单操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E8%A1%A8%E5%8D%95"><span class="toc-number">14.1.</span> <span class="toc-text">验证表单</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#form"><span class="toc-number">14.2.</span> <span class="toc-text">form</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#select"><span class="toc-number">14.3.</span> <span class="toc-text">select</span></a></li></ol></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="https://flands.com/avatar/192.jpg"></div><div class="author-info__name text-center">Doug Flands</div><div class="author-info__description text-center">Flands</div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">文章</span><span class="pull-right">55</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">标签</span><span class="pull-right">19</span></a></div></div></div><div id="content-outer"><div class="plain" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">Flands Blog</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus">   <a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a></span><span class="pull-right"></span></div></div><div class="layout" id="content-inner"><article id="post"><div class="plain" id="post-title">DOM操作笔记</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2017-05-20</time></div><div class="article-container" id="post-content"><p>DOM学习笔记</p>
+<span id="more"></span>
+
 <h1 id="文档树"><a href="#文档树" class="headerlink" title="文档树"></a>文档树</h1><h2 id="节点遍历"><a href="#节点遍历" class="headerlink" title="节点遍历"></a>节点遍历</h2><table>
 <thead>
 <tr>
@@ -16,8 +18,7 @@
 <th>代码</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>父节点</td>
 <td><code>element.parentNode</code></td>
 </tr>
@@ -43,6 +44,7 @@
 </tr>
 <tr>
 <td>节点类型</td>
+<td></td>
 </tr>
 <tr>
 <td>body,div,p…</td>
@@ -52,8 +54,7 @@
 <td>字符</td>
 <td><code>text_Node</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h1 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h1><h2 id="获取节点-Element"><a href="#获取节点-Element" class="headerlink" title="获取节点(Element)"></a>获取节点(Element)</h2><table>
 <thead>
 <tr>
@@ -61,8 +62,7 @@
 <th>代码(<code>document</code>)</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>获取ID</td>
 <td><code>.getElementById(&quot;&quot;)</code></td>
 </tr>
@@ -79,15 +79,14 @@
 <td><code>.getElementsByTagName(&quot;p&quot;)</code></td>
 </tr>
 <tr>
-<td>获取(一个/全部)节点</td>
+<td>获取(一个&#x2F;全部)节点</td>
 <td><code>.querySelector/All()</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="参数说明"><a href="#参数说明" class="headerlink" title="参数说明"></a>参数说明</h3><ul>
 <li><code>(&quot;*&quot;)</code>获取所有后代元素，包括子节点</li>
 <li><code>ClassName(&quot;user last&quot;)</code>获取具有两个Class的标签</li>
-<li><code>Selector #user .user</code>具有id=user和class=user下的元素，返回数组</li>
+<li><code>Selector #user .user</code>具有id&#x3D;user和class&#x3D;user下的元素，返回数组</li>
 </ul>
 <h2 id="节点"><a href="#节点" class="headerlink" title="节点"></a>节点</h2><p>路径:创建节点—创建节点文本—在节点中添加文本节点—执行节点动作</p>
 <table>
@@ -97,8 +96,7 @@
 <th>代码</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>创建节点’b’</td>
 <td><code>document.createElement(&quot;b&quot;)</code></td>
 </tr>
@@ -134,31 +132,32 @@
 <td>替换节点</td>
 <td><code>element.parentNode.replaceChile(a,被替换节点)</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="创建节点流程"><a href="#创建节点流程" class="headerlink" title="创建节点流程"></a>创建节点流程</h3><pre><code>var a = document.get...;
-var ul = document.createElement(&apos;ul&apos;);
-ul.innerText = &apos;ul项&apos;;
-</code></pre><h3 id="innertext兼容"><a href="#innertext兼容" class="headerlink" title="innertext兼容"></a>innertext兼容</h3><pre><code>if(!(&apos;innerText&apos; in document.body)){
-         HTMLElement.prototype.__defineGetter__(&quot;innerText&quot;,function () {
+var ul = document.createElement(&#39;ul&#39;);
+ul.innerText = &#39;ul项&#39;;
+</code></pre>
+<h3 id="innertext兼容"><a href="#innertext兼容" class="headerlink" title="innertext兼容"></a>innertext兼容</h3><pre><code>if(!(&#39;innerText&#39; in document.body))&#123;
+         HTMLElement.prototype.__defineGetter__(&quot;innerText&quot;,function () &#123;
              return this.textContent;
-         });
-         HTMLElement.prototype.__defineSetter__(&quot;innerText&quot;,function (s) {
+         &#125;);
+         HTMLElement.prototype.__defineSetter__(&quot;innerText&quot;,function (s) &#123;
              return this.textContent = s;
-         });
-     }
-</code></pre><h1 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h1><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><pre><code>elementNode.nodeName         //节点内name属性名称
-elementNode.nodeValue         //节点的值，除文本类型，其他为null
-elementNode.nodeType        //节点类型为数值
-</code></pre><table>
+         &#125;);
+     &#125;
+</code></pre>
+<h1 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h1><h3 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h3><pre><code>elementNode.nodeName 		//节点内name属性名称
+elementNode.nodeValue	 	//节点的值，除文本类型，其他为null
+elementNode.nodeType		//节点类型为数值
+</code></pre>
+<table>
 <thead>
 <tr>
 <th>Type数值</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>1</td>
 <td>元素标记</td>
 </tr>
@@ -182,17 +181,17 @@ elementNode.nodeType        //节点类型为数值
 <td>10</td>
 <td>文档类型</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="属性异常-CSS对应JS"><a href="#属性异常-CSS对应JS" class="headerlink" title="属性异常(CSS对应JS)"></a>属性异常(CSS对应JS)</h2><ul>
-<li><code>class</code> === <code>className</code></li>
-<li><code>for</code> === <code>htmlFor</code></li>
+<li><code>class</code> &#x3D;&#x3D;&#x3D; <code>className</code></li>
+<li><code>for</code> &#x3D;&#x3D;&#x3D; <code>htmlFor</code></li>
 </ul>
 <h2 id="属性-1"><a href="#属性-1" class="headerlink" title="属性"></a>属性</h2><pre><code>&lt;input id=&quot;a&quot; class=&quot;b&quot; value = &quot;&quot; maxlength=&quot;10&quot; onclick=&quot;show();&quot;&gt;
-</code></pre><h3 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h3><ul>
+</code></pre>
+<h3 id="读取"><a href="#读取" class="headerlink" title="读取"></a>读取</h3><ul>
 <li><code>input.className;</code>“a”</li>
 <li><code>input[&quot;id&quot;];</code>“userName”</li>
-<li>同名关键词，要加前缀(for=htmlFor)</li>
+<li>同名关键词，要加前缀(for&#x3D;htmlFor)</li>
 </ul>
 <h3 id="写"><a href="#写" class="headerlink" title="写"></a>写</h3><ul>
 <li><code>input.value=&#39;a&#39;;</code>写入a</li>
@@ -207,8 +206,7 @@ elementNode.nodeType        //节点类型为数值
 <th>类型</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>className</td>
 <td>“u-txt”</td>
 <td>String</td>
@@ -228,8 +226,7 @@ elementNode.nodeType        //节点类型为数值
 <td>function onclick</td>
 <td>Function</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="属性操作"><a href="#属性操作" class="headerlink" title="属性操作"></a>属性操作</h2><table>
 <thead>
 <tr>
@@ -237,8 +234,7 @@ elementNode.nodeType        //节点类型为数值
 <th>代码</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>读</td>
 <td><code>element.getAttribute(&quot;class或id&quot;)</code></td>
 </tr>
@@ -246,106 +242,119 @@ elementNode.nodeType        //节点类型为数值
 <td>设置element的id为node</td>
 <td><code>element.setAttribute(&quot;id&quot;,&quot;node&quot;)</code></td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <p>获得的属性都为String类型</p>
 <h1 id="dataset自定义属性"><a href="#dataset自定义属性" class="headerlink" title="dataset自定义属性"></a>dataset自定义属性</h1><ul>
 <li>HTMLElement.dataset</li>
 <li>data-*属性集合</li>
 <li>元素上保存数据</li>
 </ul>
-<p><code>&lt;div data-id=&quot;123&quot; data-email=&quot;qqq@qq.com</code><br>获取到id=”123”;email=”<a href="mailto:qqq@qq.com" target="_blank" rel="noopener">qqq@qq.com</a></p>
+<p><code>&lt;div data-id=&quot;123&quot; data-email=&quot;qqq@qq.com</code><br>获取到id&#x3D;”123”;email&#x3D;”<a href="mailto:&#x71;&#113;&#113;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#109;">&#x71;&#113;&#113;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#109;</a></p>
 <h1 id="样式操作"><a href="#样式操作" class="headerlink" title="样式操作"></a>样式操作</h1><h2 id="样式"><a href="#样式" class="headerlink" title="样式"></a>样式</h2><ul>
-<li>外部样式表
-<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;base.css&quot;&gt;</code>更换为<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;skin.css&quot;&gt;</code>    </li>
+<li><p>外部样式表
+<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;base.css&quot;&gt;</code>更换为<code>&lt;link rel=&quot;stylesheet&quot; href=&quot;skin.css&quot;&gt;</code>    </p>
+</li>
+<li><p>内嵌样式表</p>
+</li>
 </ul>
 <ul>
-<li>内嵌样式表<ul>
-<li><code>element.sheet.cssRules</code>返回列表</li>
-<li><code>.style.lineHeight</code>设置属性</li>
-<li><code>.slectorText</code>选择器，选择标签</li>
-<li><code>element.className += &#39;invalid&#39;</code>更新class</li>
-<li><code>element.removeAttribute(&quot;style&quot;)</code>清空样式</li>
-<li><code>window.getComputedStyle(element)</code>获取标签样式，只读</li>
-<li><code>element.currentStyle</code>IE9兼容</li>
-<li><code>window.getComputedStyle(&quot;元素&quot;, &quot;伪类&quot;).getPropertyValue(style)</code>获取单一标签样式</li>
-<li><code>.currentStyle.getAttribute</code>IE9兼容</li>
-<li>IE的<code>element.currentStyle.getAttribute</code>方法需要驼峰式属性名</li>
-</ul>
+<li><p><code>element.sheet.cssRules</code>返回列表</p>
+</li>
+<li><p><code>.style.lineHeight</code>设置属性</p>
+</li>
+<li><p><code>.slectorText</code>选择器，选择标签</p>
+</li>
+<li><p><code>element.className += &#39;invalid&#39;</code>更新class</p>
+</li>
+<li><p><code>element.removeAttribute(&quot;style&quot;)</code>清空样式</p>
+</li>
+<li><p><code>window.getComputedStyle(element)</code>获取标签样式，只读</p>
+</li>
+<li><p><code>element.currentStyle</code>IE9兼容</p>
+</li>
+<li><p><code>window.getComputedStyle(&quot;元素&quot;, &quot;伪类&quot;).getPropertyValue(style)</code>获取单一标签样式</p>
+</li>
+<li><p><code>.currentStyle.getAttribute</code>IE9兼容</p>
+</li>
+<li><p>IE的<code>element.currentStyle.getAttribute</code>方法需要驼峰式属性名</p>
+<p> function camelize(a) {
+ return a.replace(&#x2F;-(\w)&#x2F;g, function(all, letter) {
+     return letter.toUpperCase();
+ })
+ }</p>
 </li>
 </ul>
-<pre><code>function camelize(a) {
-    return a.replace(/\-(\w)/g, function(all, letter) {
-        return letter.toUpperCase();
-    })
-}
-</code></pre><ul>
-<li>内嵌样式<ul>
+<ul>
+<li>内嵌样式</li>
+</ul>
+<ul>
 <li><code>element.style.color</code>内嵌样式修改</li>
-<li><code>element.style.cssText = &#39;border-color:red&#39;</code>直接修改    </li>
-</ul>
-</li>
+<li><code>element.style.cssText = &#39;border-color:red&#39;</code>直接修改</li>
 </ul>
 <h1 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h1><p>最近写一个排序后要输出的网页，放上关键代码</p>
-<pre><code>var aqiul = document.getElementById(&apos;aqi-list&apos;);    //获取ul标签的ID
-var a = Data.filter((i) =&gt; {
+<pre><code>var aqiul = document.getElementById(&#39;aqi-list&#39;);	//获取ul标签的ID
+var a = Data.filter((i) =&gt; &#123;
         return i[1] &gt; 60;
-});                                                    //filter返回为true的数值，这里过滤掉小于60的数组中的值
-a.reverse();            //倒序排序
-for (var i = 0; i &lt; b.length; i++) {
-    var li = document.createElement(&apos;li&apos;);            //创建li标签
-    aqiul.appendChild(li);        //将li标签添加至ul内
-    li.innerHTML = &quot;第&quot; + day[i] + &quot;名：&quot; + b[i];    //li标签添加内容
-}
-/*Date为需要排序的数组[[&quot;北京&quot;, &apos;90&apos;],[&quot;上海&quot;, &apos;50&apos;]]，排序会忽略掉字符串(?)。
+&#125;);													//filter返回为true的数值，这里过滤掉小于60的数组中的值
+a.reverse();			//倒序排序
+for (var i = 0; i &lt; b.length; i++) &#123;
+    var li = document.createElement(&#39;li&#39;);			//创建li标签
+    aqiul.appendChild(li);		//将li标签添加至ul内
+    li.innerHTML = &quot;第&quot; + day[i] + &quot;名：&quot; + b[i];	//li标签添加内容
+&#125;
+/*Date为需要排序的数组[[&quot;北京&quot;, &#39;90&#39;],[&quot;上海&quot;, &#39;50&#39;]]，排序会忽略掉字符串(?)。
 day为显示汉字数字*/
-</code></pre><h1 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h1><h2 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h2><ul>
+</code></pre>
+<h1 id="DOM事件"><a href="#DOM事件" class="headerlink" title="DOM事件"></a>DOM事件</h1><h2 id="事件流"><a href="#事件流" class="headerlink" title="事件流"></a>事件流</h2><ul>
 <li>capture phase 捕获,文档树从上向下查找,Window开始</li>
 <li>target phase 触发,事件的触发过程</li>
 <li>bubble phase 冒泡,事件节点开始冒泡到顶层</li>
 </ul>
 <h2 id="事件注册与触发"><a href="#事件注册与触发" class="headerlink" title="事件注册与触发"></a>事件注册与触发</h2><ul>
-<li>事件注册<br><code>eventTarget.addEventListener(type,listener[,useCapture])</code>接受参数(事件类型,事件处理函数,[是否是捕获过程])    </li>
-<li>取消事件注册<br><code>eventTarget.removeEventListener(type,listener[,useCapture])</code>    </li>
+<li><p>事件注册<br><code>eventTarget.addEventListener(type,listener[,useCapture])</code>接受参数(事件类型,事件处理函数,[是否是捕获过程])    </p>
+</li>
+<li><p>取消事件注册<br><code>eventTarget.removeEventListener(type,listener[,useCapture])</code>    </p>
+</li>
 <li><p>事件触发<br><code>eventTarget.dispatchEvent(type)</code>    </p>
 </li>
 <li><p>IE兼容注册与取消<br><code>attchEvent/datachEvent</code>    </p>
 </li>
-<li>IE事件触发:<br><code>fireEvent(e)</code>    </li>
-<li>IE没有捕获过程，无此参数<br>兼容</li>
+<li><p>IE事件触发:<br><code>fireEvent(e)</code>    </p>
+</li>
+<li><p>IE没有捕获过程，无此参数<br>兼容</p>
+<p>  var addEvent &#x3D; document.addEventListener ?
+  function (elem, type, listener, useCapture) {
+      elem.addEventListener(type, listener, useCapture);
+  } :
+  function (elem, type, listener,) {
+      elem.attachEvent(‘on’ + type, listener);
+  };
+  var delEvent &#x3D; document.removeEventListener ?
+  function (elem, type, listener, useCapture) {
+      elem.addEventListener(type, listener, useCapture);
+  } :
+  function (elem, type, listener,) {
+      elem.detachEvent(‘on’ + type, listener)
+  }</p>
+</li>
 </ul>
-<pre><code>var addEvent = document.addEventListener ?
-    function (elem, type, listener, useCapture) {
-        elem.addEventListener(type, listener, useCapture);
-    } :
-    function (elem, type, listener,) {
-        elem.attachEvent(&apos;on&apos; + type, listener);
-    };
-
-var delEvent = document.removeEventListener ?
-    function (elem, type, listener, useCapture) {
-        elem.addEventListener(type, listener, useCapture);
-    } :
-    function (elem, type, listener,) {
-        elem.detachEvent(&apos;on&apos; + type, listener)
-    }
-</code></pre><h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><ul>
-<li><p>属性</p>
+<h2 id="事件对象"><a href="#事件对象" class="headerlink" title="事件对象"></a>事件对象</h2><ul>
+<li>属性</li>
+</ul>
 <ul>
 <li><code>type</code> 时间类型</li>
 <li><code>target(srcElement//IE内核)</code> 事件触发的DOM节点</li>
 <li><code>currentTarget</code>当前处理的事件</li>
 </ul>
-</li>
-<li><p>方法</p>
+<ul>
+<li>方法</li>
+</ul>
 <ul>
 <li><code>event.stopPropagation | event.cancelBubble=true //IE</code>阻止事件传播到父节点</li>
 <li><code>preventDefault | returnValue=false //IE</code>阻止默认行为</li>
 <li><code>stopImmediatePropagation</code>阻止冒泡,跟第一个一样,阻止后续时间</li>
 </ul>
-</li>
-</ul>
-<p>参考<br><a href="http://www.runoob.com/jsref/dom-obj-event.html" target="_blank" rel="noopener">事件列表</a></p>
+<p>参考<br><a href="http://www.runoob.com/jsref/dom-obj-event.html">事件列表</a></p>
 <h3 id="MouseEvent"><a href="#MouseEvent" class="headerlink" title="MouseEvent"></a>MouseEvent</h3><p>元素:Element,元素例子:div</p>
 <table>
 <thead>
@@ -356,8 +365,7 @@ var delEvent = document.removeEventListener ?
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>click</td>
 <td>Y</td>
 <td>focus.activation</td>
@@ -372,7 +380,7 @@ var delEvent = document.removeEventListener ?
 <tr>
 <td>mousedown</td>
 <td>Y</td>
-<td>drag/scroll text selection</td>
+<td>drag&#x2F;scroll text selection</td>
 <td>按下</td>
 </tr>
 <tr>
@@ -411,8 +419,7 @@ var delEvent = document.removeEventListener ?
 <td>None</td>
 <td>移开元素,嵌套元素不触发</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h4 id="属性-2"><a href="#属性-2" class="headerlink" title="属性"></a>属性</h4><ul>
 <li>clientX,clientY，至页面距离</li>
 <li>screenX,screenY，至屏幕距离</li>
@@ -426,7 +433,8 @@ var delEvent = document.removeEventListener ?
 </li>
 </ul>
 <h3 id="WheelEvent滚轮"><a href="#WheelEvent滚轮" class="headerlink" title="WheelEvent滚轮"></a>WheelEvent滚轮</h3><ul>
-<li><p>事件</p>
+<li>事件</li>
+</ul>
 <ul>
 <li>事件类型:wheel</li>
 <li>冒泡:Y</li>
@@ -434,15 +442,14 @@ var delEvent = document.removeEventListener ?
 <li>默认事件:scroll or zoom document</li>
 <li>例子:div</li>
 </ul>
-</li>
-<li><p>属性</p>
+<ul>
+<li>属性</li>
+</ul>
 <ul>
 <li>daltaMode </li>
 <li>deltaX</li>
 <li>deltaY</li>
 <li>deltaZ</li>
-</ul>
-</li>
 </ul>
 <h3 id="FocusEvent焦点"><a href="#FocusEvent焦点" class="headerlink" title="FocusEvent焦点"></a>FocusEvent焦点</h3><p>获得焦点和失去焦点的时候<br>元素:Window、Element,默认事件:None,元素例子:window、input    </p>
 <table>
@@ -453,8 +460,7 @@ var delEvent = document.removeEventListener ?
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>blur</td>
 <td>N</td>
 <td>失去焦点</td>
@@ -474,13 +480,12 @@ var delEvent = document.removeEventListener ?
 <td>Y</td>
 <td>即将失去焦点</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
-<li>属性<ul>
-<li>relatedTarget 失去焦点时另一个获得焦点的元素</li>
+<li>属性</li>
 </ul>
-</li>
+<ul>
+<li>relatedTarget 失去焦点时另一个获得焦点的元素</li>
 </ul>
 <h3 id="InputEvent输入事件"><a href="#InputEvent输入事件" class="headerlink" title="InputEvent输入事件"></a>InputEvent输入事件</h3><p>是否冒泡:Y,元素:Element,元素例子:input    </p>
 <table>
@@ -491,8 +496,7 @@ var delEvent = document.removeEventListener ?
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>beforeinput</td>
 <td>update DOM Element</td>
 <td>先触发，无输入内容</td>
@@ -507,8 +511,7 @@ var delEvent = document.removeEventListener ?
 <td></td>
 <td>IE下Input</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h3 id="KeyboardEvent-键盘事件"><a href="#KeyboardEvent-键盘事件" class="headerlink" title="KeyboardEvent 键盘事件"></a>KeyboardEvent 键盘事件</h3><p>是否冒泡:Y,元素:Element,元素例子:div,input    </p>
 <table>
 <thead>
@@ -518,10 +521,9 @@ var delEvent = document.removeEventListener ?
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>keydown</td>
-<td>beforeinput/inputfocus/blur activation</td>
+<td>beforeinput&#x2F;inputfocus&#x2F;blur activation</td>
 <td>按下</td>
 </tr>
 <tr>
@@ -529,19 +531,18 @@ var delEvent = document.removeEventListener ?
 <td>None</td>
 <td>抬起</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
-<li>属性<ul>
+<li>属性</li>
+</ul>
+<ul>
 <li>key</li>
 <li>code 按键码</li>
 <li>ctrlKey、shiftKey、altKey、metaKey</li>
 <li>repeat 按住不动</li>
 <li>keyCode ascii码</li>
 </ul>
-</li>
-</ul>
-<h3 id="Event"><a href="#Event" class="headerlink" title="Event"></a>Event</h3><p>是否冒泡:N,默认事件:None,元素用W=Window\D=document\E=Element代替</p>
+<h3 id="Event"><a href="#Event" class="headerlink" title="Event"></a>Event</h3><p>是否冒泡:N,默认事件:None,元素用W&#x3D;Window\D&#x3D;document\E&#x3D;Element代替</p>
 <table>
 <thead>
 <tr>
@@ -551,8 +552,7 @@ var delEvent = document.removeEventListener ?
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>load</td>
 <td>W,D,E</td>
 <td>Window\image\iframe</td>
@@ -582,25 +582,26 @@ var delEvent = document.removeEventListener ?
 <td>window\image</td>
 <td>图片退出</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
-<li>Window<ul>
+<li>Window</li>
+</ul>
+<ul>
 <li>load</li>
 <li>unload</li>
 <li>error</li>
 <li>abort</li>
 </ul>
-</li>
-<li>Image<ul>
+<ul>
+<li>Image</li>
+</ul>
+<ul>
 <li>load</li>
 <li>error
-<code>&lt;image src=&quot;.jpg&quot; onerror=&quot;this.src=&#39;,jpg&#39;&quot;</code></li>
+ <code>&lt;image src=&quot;.jpg&quot; onerror=&quot;this.src=&#39;,jpg&#39;&quot;</code></li>
 <li>abort 加载时按下ESC退出触发</li>
 </ul>
-</li>
-</ul>
-<h3 id="UIEvent"><a href="#UIEvent" class="headerlink" title="UIEvent"></a>UIEvent</h3><p>默认事件:None,元素用W=Window\D=document\E=Element代替</p>
+<h3 id="UIEvent"><a href="#UIEvent" class="headerlink" title="UIEvent"></a>UIEvent</h3><p>默认事件:None,元素用W&#x3D;Window\D&#x3D;document\E&#x3D;Element代替</p>
 <table>
 <thead>
 <tr>
@@ -611,8 +612,7 @@ var delEvent = document.removeEventListener ?
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>resize</td>
 <td>N</td>
 <td>W,E</td>
@@ -621,13 +621,12 @@ var delEvent = document.removeEventListener ?
 </tr>
 <tr>
 <td>scrikk</td>
-<td>N/Y</td>
+<td>N&#x2F;Y</td>
 <td>D,E</td>
 <td>document\div</td>
 <td>页面滚动,元素上触发可冒泡</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="事件代理"><a href="#事件代理" class="headerlink" title="事件代理"></a>事件代理</h2><p>将事件注册到元素的父节点上    </p>
 <h1 id="数据通信"><a href="#数据通信" class="headerlink" title="数据通信"></a>数据通信</h1><h2 id="常用HTTP方法"><a href="#常用HTTP方法" class="headerlink" title="常用HTTP方法"></a>常用HTTP方法</h2><table>
 <thead>
@@ -637,8 +636,7 @@ var delEvent = document.removeEventListener ?
 <th>是否包含主体</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>GET</td>
 <td>从服务器获取一份文档</td>
 <td>否</td>
@@ -673,8 +671,7 @@ var delEvent = document.removeEventListener ?
 <td>决定可以在服务器上执行哪些方法</td>
 <td>否</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h2><table>
 <thead>
 <tr>
@@ -683,8 +680,7 @@ var delEvent = document.removeEventListener ?
 <th>原因短语</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>200</td>
 <td>请求成功,GET和POST方法</td>
 <td>OK</td>
@@ -719,53 +715,58 @@ var delEvent = document.removeEventListener ?
 <td>服务器内部错误</td>
 <td>Internal Server Error</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="Ajax"><a href="#Ajax" class="headerlink" title="Ajax"></a>Ajax</h2><p>XHR(ajax对象)—open()开启请求,不发送—send()正式发送—返回数据接受—结束请求</p>
 <p>readyState: 0 (每次调用方法+1)
 status: 结束请求时(200)
 responseText: <code>&lt;!DOCTYPE html&gt;</code></p>
 <pre><code>var xhr = new XMLHttpRequest();//创建XHR对象
 /*处理请求*/
-xhr.onreadystatechange = function (callback) {
-    if (xhr.readyState == 4){
-        if ((xhr.status &gt;=200 &amp;&amp; xhr.status &lt;300) || xhr.status == 304){
+xhr.onreadystatechange = function (callback) &#123;
+    if (xhr.readyState == 4)&#123;
+        if ((xhr.status &gt;=200 &amp;&amp; xhr.status &lt;300) || xhr.status == 304)&#123;
             callback(xhr.responseText);
-        }else {
-            alert(&apos;Request不成功:&apos; + xhr.status);
-        }
-    }
-};
+        &#125;else &#123;
+            alert(&#39;Request不成功:&#39; + xhr.status);
+        &#125;
+    &#125;
+&#125;;
 /*发送请求*/
-xhr.open(&apos;get&apos;, &apos;example.json&apos;, true);
-xhr.setRequestHeader(&apos;myHeader&apos;, &apos;myValue&apos;);
+xhr.open(&#39;get&#39;, &#39;example.json&#39;, true);
+xhr.setRequestHeader(&#39;myHeader&#39;, &#39;myValue&#39;);
 xhr.send(null);//get方法
 xhr.send(serialize(formdata));//post方法
-</code></pre><h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>xhr.open(method, url[,async = rtue])</code></p>
+</code></pre>
+<h3 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h3><p><code>xhr.open(method, url[,async = rtue])</code></p>
 <ul>
-<li>method方法<ul>
+<li>method方法</li>
+</ul>
+<ul>
 <li>GET</li>
 <li>POST</li>
 </ul>
-</li>
-<li>url 地址<ul>
-<li>source</li>
-<li>./source</li>
+<ul>
+<li>url 地址</li>
 </ul>
-</li>
-<li>async 布尔值<ul>
+<ul>
+<li>source</li>
+<li>.&#x2F;source</li>
+</ul>
+<ul>
+<li>async 布尔值</li>
+</ul>
+<ul>
 <li>true 开启异步请求</li>
 <li>false 开启同步请求</li>
-</ul>
-</li>
 </ul>
 <p><code>xhr.setRequestHeader(header, value)</code>设置头部字段</p>
 <ul>
 <li>header:Content-Type </li>
 <li>value: <code>application/x-www-form-urlencoded[mulitipart/form-data]</code> 表单编码(文件上传的话) <code>xhr.send([data = null]);</code></li>
-<li>data:String/FormData</li>
+<li>data:String&#x2F;FormData</li>
 </ul>
-<h3 id="请求参数序列化"><a href="#请求参数序列化" class="headerlink" title="请求参数序列化"></a>请求参数序列化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&apos;get&apos;, &apos;example.json?&apos; + &apos;name1=value1&amp;name2=value2&apos;, true);</span><br><span class="line">带查询请求</span><br><span class="line">传入对象返回字符串</span><br><span class="line">function serialize(data) &#123;</span><br><span class="line">    if (!data) return &apos;&apos;;</span><br><span class="line">    let pairs = [];</span><br><span class="line">    for (let name in data)&#123;</span><br><span class="line">        if (!data.hasOwnProperty(name)) continue;</span><br><span class="line">        if (typeof data[name] === &apos;function&apos;) continue;</span><br><span class="line">        let value = data[name].toString();</span><br><span class="line">        name = encodeURIComponent(name);</span><br><span class="line">        value = encodeURIComponent(value);</span><br><span class="line">        pairs.push(name + &apos;=&apos; + value);</span><br><span class="line">    &#125;</span><br><span class="line">    return pairs.join(&apos;&amp;&apos;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="请求参数序列化"><a href="#请求参数序列化" class="headerlink" title="请求参数序列化"></a>请求参数序列化</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">xhr.open(&#x27;get&#x27;, &#x27;example.json?&#x27; + &#x27;name1=value1&amp;name2=value2&#x27;, true);</span><br><span class="line">带查询请求</span><br><span class="line">传入对象返回字符串</span><br><span class="line">function serialize(data) &#123;</span><br><span class="line">    if (!data) return &#x27;&#x27;;</span><br><span class="line">    let pairs = [];</span><br><span class="line">    for (let name in data)&#123;</span><br><span class="line">        if (!data.hasOwnProperty(name)) continue;</span><br><span class="line">        if (typeof data[name] === &#x27;function&#x27;) continue;</span><br><span class="line">        let value = data[name].toString();</span><br><span class="line">        name = encodeURIComponent(name);</span><br><span class="line">        value = encodeURIComponent(value);</span><br><span class="line">        pairs.push(name + &#x27;=&#x27; + value);</span><br><span class="line">    &#125;</span><br><span class="line">    return pairs.join(&#x27;&amp;&#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h3 id="同源策略"><a href="#同源策略" class="headerlink" title="同源策略"></a>同源策略</h3><ul>
 <li>两个页面拥有相同的协议(protocol)，端口(port)和主机(host)，那么这两个页面就属于同一个源(origin)</li>
 </ul>
@@ -778,9 +779,11 @@ xhr.send(serialize(formdata));//post方法
 <li>Frame代理</li>
 <li>JSONP</li>
 </ul>
-<h1 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h1><h2 id="cookie转为对象"><a href="#cookie转为对象" class="headerlink" title="cookie转为对象"></a>cookie转为对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> function getcookie() &#123;</span><br><span class="line">    var cookie = &#123;&#125;,</span><br><span class="line">        all = document.cookie,</span><br><span class="line">        list = all.split(&apos;;&apos;);</span><br><span class="line">    if (all === &apos;&apos;)&#123;</span><br><span class="line">        return cookie;</span><br><span class="line">    &#125;</span><br><span class="line">    for (let i=0;i&lt; list.length;i++)&#123;</span><br><span class="line">        var item = list[i],</span><br><span class="line">            p = item.indexOf(&apos;=&apos;),</span><br><span class="line">            name = item.substring(0,p),</span><br><span class="line">            value = item.substring();</span><br><span class="line">        name = decodeURIComponent(name);</span><br><span class="line">        value = decodeURIComponent(value);</span><br><span class="line">        cookie[name] = value;</span><br><span class="line">    &#125;</span><br><span class="line">    return cookie;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="cookie增加"><a href="#cookie增加" class="headerlink" title="cookie增加"></a>cookie增加</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">   document.cookie = &apos;name=value&apos;;</span><br><span class="line">或者</span><br><span class="line">   function setCookie(name,value,expires,path,domain,secure) &#123;</span><br><span class="line">       var cookie = &#123;&#125;;</span><br><span class="line">           var all = document.cookie;</span><br><span class="line">           if (all === &apos;&apos;) return cookie;</span><br><span class="line">           var list = all.split(&apos;; &apos;);</span><br><span class="line">           for (var i = 0, len = list.length; i &lt; len; i++) &#123;</span><br><span class="line">             var item = list[i];</span><br><span class="line">             var p = item.indexOf(&apos;=&apos;);</span><br><span class="line">             var name = item.substring(0, p);</span><br><span class="line">             name = decodeURIComponent(name);</span><br><span class="line">             var value = item.substring(p + 1);</span><br><span class="line">             value = decodeURIComponent(value);</span><br><span class="line">             cookie[name] = value;</span><br><span class="line">           &#125;</span><br><span class="line">           return cookie;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<h2 id="cookie删除"><a href="#cookie删除" class="headerlink" title="cookie删除"></a>cookie删除</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function removeCookie (name,path,domain)&#123;</span><br><span class="line">    document.cookie = name+&apos;=&apos;</span><br><span class="line">    + &apos;;path=&apos;+path</span><br><span class="line">    + &apos;;domain=&apos;+domain</span><br><span class="line">    + &apos;;max-age=0&apos;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="数据存储"><a href="#数据存储" class="headerlink" title="数据存储"></a>数据存储</h1><h2 id="cookie转为对象"><a href="#cookie转为对象" class="headerlink" title="cookie转为对象"></a>cookie转为对象</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> function getcookie() &#123;</span><br><span class="line">    var cookie = &#123;&#125;,</span><br><span class="line">        all = document.cookie,</span><br><span class="line">        list = all.split(&#x27;;&#x27;);</span><br><span class="line">    if (all === &#x27;&#x27;)&#123;</span><br><span class="line">        return cookie;</span><br><span class="line">    &#125;</span><br><span class="line">    for (let i=0;i&lt; list.length;i++)&#123;</span><br><span class="line">        var item = list[i],</span><br><span class="line">            p = item.indexOf(&#x27;=&#x27;),</span><br><span class="line">            name = item.substring(0,p),</span><br><span class="line">            value = item.substring();</span><br><span class="line">        name = decodeURIComponent(name);</span><br><span class="line">        value = decodeURIComponent(value);</span><br><span class="line">        cookie[name] = value;</span><br><span class="line">    &#125;</span><br><span class="line">    return cookie;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="cookie增加"><a href="#cookie增加" class="headerlink" title="cookie增加"></a>cookie增加</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">   document.cookie = &#x27;name=value&#x27;;</span><br><span class="line">或者</span><br><span class="line">   function setCookie(name,value,expires,path,domain,secure) &#123;</span><br><span class="line">       var cookie = &#123;&#125;;</span><br><span class="line">           var all = document.cookie;</span><br><span class="line">           if (all === &#x27;&#x27;) return cookie;</span><br><span class="line">           var list = all.split(&#x27;; &#x27;);</span><br><span class="line">           for (var i = 0, len = list.length; i &lt; len; i++) &#123;</span><br><span class="line">             var item = list[i];</span><br><span class="line">             var p = item.indexOf(&#x27;=&#x27;);</span><br><span class="line">             var name = item.substring(0, p);</span><br><span class="line">             name = decodeURIComponent(name);</span><br><span class="line">             var value = item.substring(p + 1);</span><br><span class="line">             value = decodeURIComponent(value);</span><br><span class="line">             cookie[name] = value;</span><br><span class="line">           &#125;</span><br><span class="line">           return cookie;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="cookie删除"><a href="#cookie删除" class="headerlink" title="cookie删除"></a>cookie删除</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function removeCookie (name,path,domain)&#123;</span><br><span class="line">    document.cookie = name+&#x27;=&#x27;</span><br><span class="line">    + &#x27;;path=&#x27;+path</span><br><span class="line">    + &#x27;;domain=&#x27;+domain</span><br><span class="line">    + &#x27;;max-age=0&#x27;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="缺陷"><a href="#缺陷" class="headerlink" title="缺陷"></a>缺陷</h2><ul>
 <li>流量代价</li>
 <li>安全性问题(明文传递)</li>
@@ -788,19 +791,19 @@ xhr.send(serialize(formdata));//post方法
 </ul>
 <h2 id="storage-替代cookie"><a href="#storage-替代cookie" class="headerlink" title="storage(替代cookie)"></a>storage(替代cookie)</h2><p>建议设置大小5M左右    </p>
 <ul>
-<li><p>sessionStorage</p>
+<li>sessionStorage</li>
+</ul>
 <ul>
 <li>有效期为浏览器的会话时间</li>
 <li>作用域包含窗口和localStorage</li>
 </ul>
-</li>
-<li><p>localStorage</p>
+<ul>
+<li>localStorage</li>
+</ul>
 <ul>
 <li>有效期永久</li>
 <li>作用域:协议,主机名,端口</li>
 <li>不共享窗口</li>
-</ul>
-</li>
 </ul>
 <h3 id="JS对象"><a href="#JS对象" class="headerlink" title="JS对象"></a>JS对象</h3><ul>
 <li>读取
@@ -823,9 +826,11 @@ xhr.send(serialize(formdata));//post方法
 <li>删除所有数据
 <code>localStorage.clear()</code></li>
 </ul>
-<h1 id="JS动画"><a href="#JS动画" class="headerlink" title="JS动画"></a>JS动画</h1><h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setInterval(func执行改变属性操作,delay时间,[,列表])只执行一次</span><br><span class="line">clearInterval(set对象)清除定时器</span><br><span class="line">setTimeout(func执行改变属性操作,[delay时间]可选,[,列表])重复执行</span><br><span class="line">clearTimeout(set对象)</span><br><span class="line">requestAnimationFrame(func)间隔时间不由用户控制，由刷新频率控制，默认1秒60次</span><br><span class="line">cancelAnimationFrame(request对象)</span><br></pre></td></tr></table></figure>
-<h1 id="多媒体和图形"><a href="#多媒体和图形" class="headerlink" title="多媒体和图形"></a>多媒体和图形</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio src=&quot;music.mp3&quot;&gt;&lt;/audio&gt;</span><br><span class="line">&lt;video src=&quot;movie.mov width=320 height=240&gt;&lt;/video&gt;</span><br><span class="line">兼容写法</span><br><span class="line">&lt;audio&gt;</span><br><span class="line">&lt;source src=&quot;music.mp3&quot; [type=&quot;audio/mpeg]&gt;</span><br><span class="line">&lt;source src=&quot;music.wav&quot; [type=&quot;audio/x-wav]&gt;</span><br><span class="line">&lt;source src=&quot;music.ogg&quot; [type=&quot;audio/ogg]&gt;</span><br><span class="line">&lt;/audio&gt;</span><br><span class="line">&lt;video&gt;一样用src</span><br></pre></td></tr></table></figure>
-<p>检测兼容性<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = new Audio();</span><br><span class="line">a.canPlayType(&apos;audio/nav&apos;);//不支持返回&quot;&quot;空字符</span><br></pre></td></tr></table></figure></p>
+<h1 id="JS动画"><a href="#JS动画" class="headerlink" title="JS动画"></a>JS动画</h1><h2 id="定时器"><a href="#定时器" class="headerlink" title="定时器"></a>定时器</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">setInterval(func执行改变属性操作,delay时间,[,列表])只执行一次</span><br><span class="line">clearInterval(set对象)清除定时器</span><br><span class="line">setTimeout(func执行改变属性操作,[delay时间]可选,[,列表])重复执行</span><br><span class="line">clearTimeout(set对象)</span><br><span class="line">requestAnimationFrame(func)间隔时间不由用户控制，由刷新频率控制，默认1秒60次</span><br><span class="line">cancelAnimationFrame(request对象)</span><br></pre></td></tr></table></figure>
+
+<h1 id="多媒体和图形"><a href="#多媒体和图形" class="headerlink" title="多媒体和图形"></a>多媒体和图形</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;audio src=&quot;music.mp3&quot;&gt;&lt;/audio&gt;</span><br><span class="line">&lt;video src=&quot;movie.mov width=320 height=240&gt;&lt;/video&gt;</span><br><span class="line">兼容写法</span><br><span class="line">&lt;audio&gt;</span><br><span class="line">&lt;source src=&quot;music.mp3&quot; [type=&quot;audio/mpeg]&gt;</span><br><span class="line">&lt;source src=&quot;music.wav&quot; [type=&quot;audio/x-wav]&gt;</span><br><span class="line">&lt;source src=&quot;music.ogg&quot; [type=&quot;audio/ogg]&gt;</span><br><span class="line">&lt;/audio&gt;</span><br><span class="line">&lt;video&gt;一样用src</span><br></pre></td></tr></table></figure>
+<p>检测兼容性    </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = new Audio();</span><br><span class="line">a.canPlayType(&#x27;audio/nav&#x27;);//不支持返回&quot;&quot;空字符</span><br></pre></td></tr></table></figure>
 <h2 id="常用HTML属性"><a href="#常用HTML属性" class="headerlink" title="常用HTML属性"></a>常用HTML属性</h2><table>
 <thead>
 <tr>
@@ -835,8 +840,7 @@ xhr.send(serialize(formdata));//post方法
 <th>备注</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>src</td>
 <td>是</td>
 <td></td>
@@ -858,7 +862,7 @@ xhr.send(serialize(formdata));//post方法
 <td>preload</td>
 <td>否</td>
 <td>none</td>
-<td>可为none/metadata/auto,音频在页面加载时加载并预备播放,使用autoplay则忽略该属性</td>
+<td>可为none&#x2F;metadata&#x2F;auto,音频在页面加载时加载并预备播放,使用autoplay则忽略该属性</td>
 </tr>
 <tr>
 <td>loop</td>
@@ -866,8 +870,7 @@ xhr.send(serialize(formdata));//post方法
 <td>false</td>
 <td>结束后重新播放</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="控制多媒体"><a href="#控制多媒体" class="headerlink" title="控制多媒体"></a>控制多媒体</h2><ul>
 <li>load() 加载媒体内容</li>
 <li>play() 开始播放</li>
@@ -892,9 +895,9 @@ xhr.send(serialize(formdata));//post方法
 <li>waiting 缓冲数据不够播放暂停</li>
 <li>playing 正在播放</li>
 </ul>
-<h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id=&quot;&quot; width=&quot;300&quot; height&quot;150&quot;&gt;&lt;/canvas&gt;</span><br><span class="line">var canvas = d.getid(&apos;tutorial&apos;);</span><br><span class="line">var ctx = cavas.getContext(&apos;2d&apos;);//渲染上下文对象</span><br><span class="line">ctx.globalCompositeOperation = &apos;destination-over&apos;;图层显示方式</span><br></pre></td></tr></table></figure>
+<h1 id="canvas"><a href="#canvas" class="headerlink" title="canvas"></a>canvas</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas id=&quot;&quot; width=&quot;300&quot; height&quot;150&quot;&gt;&lt;/canvas&gt;</span><br><span class="line">var canvas = d.getid(&#x27;tutorial&#x27;);</span><br><span class="line">var ctx = cavas.getContext(&#x27;2d&#x27;);//渲染上下文对象</span><br><span class="line">ctx.globalCompositeOperation = &#x27;destination-over&#x27;;图层显示方式</span><br></pre></td></tr></table></figure>
 <h2 id="流程"><a href="#流程" class="headerlink" title="流程"></a>流程</h2><p>清除画布 — 绘制图形 —  保存渲染上下文状态(设置) — 绘制图形 — 恢复渲染上下文状态 — 回到第二步</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial" target="_blank" rel="noopener">cavans教程</a></p>
+<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Canvas_API/Tutorial">cavans教程</a></p>
 <h1 id="BOM"><a href="#BOM" class="headerlink" title="BOM"></a>BOM</h1><h2 id="属性-3"><a href="#属性-3" class="headerlink" title="属性"></a>属性</h2><table>
 <thead>
 <tr>
@@ -902,8 +905,7 @@ xhr.send(serialize(formdata));//post方法
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>navigator</td>
 <td>浏览器信息</td>
 </tr>
@@ -919,37 +921,38 @@ xhr.send(serialize(formdata));//post方法
 <td>screen</td>
 <td>屏幕信息</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <ul>
 <li><code>navigator.userAgent</code>判断是什么浏览器</li>
-<li><p>location</p>
+<li>location</li>
+</ul>
 <ul>
 <li>assign(url) 载入新的url,记录浏览历史</li>
 <li>replace(url) 载入新的url,不记录历史</li>
 <li>reload() 重载当前页</li>
 </ul>
-</li>
-<li><p>history</p>
+<ul>
+<li>history</li>
+</ul>
 <ul>
 <li>length 历史记录长度</li>
 <li>back() 正整数 后退</li>
 <li>forward() 正整数 前进</li>
 <li>go() 整数，前进或后退</li>
 </ul>
-</li>
-<li><p>screen</p>
+<ul>
+<li>screen</li>
+</ul>
 <ul>
 <li>avail为浏览器</li>
-</ul>
-</li>
 </ul>
 <h2 id="方法-1"><a href="#方法-1" class="headerlink" title="方法"></a>方法</h2><ul>
 <li>alert 提示框</li>
 <li>confirm 确定取消</li>
 <li>prompt 输入框</li>
 </ul>
-<h2 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.open(&apos;http://&apos;,&apos;_blank&apos;,&apos;width=600,height=400&apos;)</span><br><span class="line">window.close</span><br></pre></td></tr></table></figure>
+<h2 id="窗口"><a href="#窗口" class="headerlink" title="窗口"></a>窗口</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.open(&#x27;http://&#x27;,&#x27;_blank&#x27;,&#x27;width=600,height=400&#x27;)</span><br><span class="line">window.close</span><br></pre></td></tr></table></figure>
+
 <table>
 <thead>
 <tr>
@@ -958,8 +961,7 @@ xhr.send(serialize(formdata));//post方法
 <th>说明</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>top</td>
 <td>Num</td>
 <td>离屏幕像素</td>
@@ -972,7 +974,7 @@ xhr.send(serialize(formdata));//post方法
 <tr>
 <td>_blank或_self</td>
 <td></td>
-<td>新窗口/当前显示</td>
+<td>新窗口&#x2F;当前显示</td>
 </tr>
 <tr>
 <td>toolbar</td>
@@ -999,8 +1001,7 @@ xhr.send(serialize(formdata));//post方法
 <td></td>
 <td>窗口大小</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><table>
 <thead>
 <tr>
@@ -1008,8 +1009,7 @@ xhr.send(serialize(formdata));//post方法
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>load</td>
 <td>文档和图片加载完</td>
 </tr>
@@ -1029,48 +1029,64 @@ xhr.send(serialize(formdata));//post方法
 <td>scroll</td>
 <td>拖动滚动浏览器</td>
 </tr>
-</tbody>
-</table>
+</tbody></table>
 <h1 id="表单操作"><a href="#表单操作" class="headerlink" title="表单操作"></a>表单操作</h1><h2 id="验证表单"><a href="#验证表单" class="headerlink" title="验证表单"></a>验证表单</h2><ul>
-<li>必须填写的字段在属性内加<code>required</code><h2 id="form"><a href="#form" class="headerlink" title="form"></a>form</h2></li>
+<li>必须填写的字段在属性内加<code>required</code></li>
+</ul>
+<h2 id="form"><a href="#form" class="headerlink" title="form"></a>form</h2><ul>
 <li><code>autocomplete</code> on | off 候选值</li>
-<li><code>elements</code> <ul>
+<li><code>elements</code></li>
+</ul>
+<ul>
 <li>该变淡子孙表单控件(除图片按钮)</li>
 <li>归属于该表单的表单控件(除图片按钮)</li>
 </ul>
-</li>
-<li>操作表单<code>form[index] | form[&#39;name&#39;] | testForm.elements[]同上</code><ul>
+<ul>
+<li>操作表单<code>form[index] | form[&#39;name&#39;] | testForm.elements[]同上</code></li>
+</ul>
+<ul>
 <li><code>[&#39;name&#39;]</code> 先查找name再找Id</li>
 <li>一旦获取到，不管id,name如何变化，只要在页面上都可以用原名称获取</li>
 <li><code>elements</code>为动态获取，改变后返回null</li>
 </ul>
-</li>
-<li>reset()接口<ul>
+<ul>
+<li>reset()接口</li>
+</ul>
+<ul>
 <li>可重置:imput,keygen,output,select,textarea</li>
 <li>file.reset()重置</li>
 </ul>
-</li>
-<li>label<ul>
+<ul>
+<li>label</li>
+</ul>
+<ul>
 <li>htmlFor:<code>for&quot;txtId&quot;</code>关联到表单控件激活行为</li>
 <li>可关联元素:button,input(除hidden),keygen,meter,output,progress,select,textarea</li>
 <li>属性添加class可以改变关联的上传文件按钮</li>
 </ul>
-</li>
-<li>control<ul>
+<ul>
+<li>control</li>
+</ul>
+<ul>
 <li>未指定for则为第一个子孙可关联元素</li>
 </ul>
-</li>
-<li>form<ul>
+<ul>
+<li>form</li>
+</ul>
+<ul>
 <li>关联归属表单</li>
 <li>可关联:button,fieldset,input,keygen,label,object,output,select,textarea</li>
 <li>只读</li>
 </ul>
-</li>
-<li>input<ul>
-<li><a href="http://www.w3school.com.cn/tags/tag_input.asp" target="_blank" rel="noopener">W3C属性</a><h2 id="select"><a href="#select" class="headerlink" title="select"></a>select</h2></li>
+<ul>
+<li>input</li>
 </ul>
-</li>
-<li><p>select属性</p>
+<ul>
+<li><a href="http://www.w3school.com.cn/tags/tag_input.asp">W3C属性</a></li>
+</ul>
+<h2 id="select"><a href="#select" class="headerlink" title="select"></a>select</h2><ul>
+<li>select属性</li>
+</ul>
 <ul>
 <li>name 表单提交名称指定</li>
 <li>value 选中选项的value值</li>
@@ -1081,14 +1097,16 @@ xhr.send(serialize(formdata));//post方法
 <li>add(element[,before]) 指定位置添加选项</li>
 <li>remove([index]) 删除某个选项</li>
 </ul>
-</li>
-<li><p>optgroup. 相关比较大的选项做分组</p>
+<ul>
+<li>optgroup. 相关比较大的选项做分组</li>
+</ul>
 <ul>
 <li>disabled 当前所有选项不可选</li>
 <li>label 必选</li>
 </ul>
-</li>
-<li><p>option属性，除了上面两个还有</p>
+<ul>
+<li>option属性，除了上面两个还有</li>
+</ul>
 <ul>
 <li>value 值</li>
 <li>text 文字</li>
@@ -1096,29 +1114,29 @@ xhr.send(serialize(formdata));//post方法
 <li>selected 是否被选中</li>
 <li>defaultSelected 默认选中</li>
 </ul>
-</li>
-<li><p>select创建</p>
+<ul>
+<li>select创建</li>
+</ul>
 <ul>
 <li><code>document.createElement</code></li>
 <li><code>new Option([text[,value[,defaultSelected[,selected]]]])</code></li>
 </ul>
-</li>
-<li><p>select添加选项</p>
+<ul>
+<li>select添加选项</li>
+</ul>
 <ul>
 <li>insertBefore</li>
-<li>select.add<figure class="highlight plain"><figcaption><span>option </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opt.parentNode.insertBefore(option,opt);</span><br><span class="line">select.add(option,opt);</span><br></pre></td></tr></table></figure>
-</li>
+<li>select.add <figure class="highlight plaintext"><figcaption><span>option </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opt.parentNode.insertBefore(option,opt);</span><br><span class="line">select.add(option,opt);</span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-<li><p>select删除</p>
+<ul>
+<li>select删除</li>
+</ul>
 <ul>
 <li>removeChile</li>
-<li>select.remove<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opt.parentNode.removeChild(opt);</span><br><span class="line">select.remove(2);</span><br></pre></td></tr></table></figure>
-</li>
+<li>select.remove <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">opt.parentNode.removeChild(opt);</span><br><span class="line">select.remove(2);</span><br></pre></td></tr></table></figure></li>
 </ul>
-</li>
-</ul>
-</div></article><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JS/">JS</a><a class="post-meta__tags" href="/tags/DOM/">DOM</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2017/05/20/14.架构/"><i class="fa fa-chevron-left">  </i><span>页面架构笔记</span></a></div><div class="next-post pull-right"><a href="/2017/05/15/10.JS笔记/"><span>JavaScript笔记</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2017 - 2022 By Doug Flands</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">+1S</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.6.1"></script><script src="/js/fancybox.js?version=1.6.1"></script><script src="/js/sidebar.js?version=1.6.1"></script><script src="/js/copy.js?version=1.6.1"></script><script src="/js/fireworks.js?version=1.6.1"></script><script src="/js/transition.js?version=1.6.1"></script><script src="/js/scroll.js?version=1.6.1"></script><script src="/js/head.js?version=1.6.1"></script><script>if(/Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)) {
+</div></article><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/JS/">JS</a><a class="post-meta__tags" href="/tags/DOM/">DOM</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2017/05/22/12.Github%20for%20windows%E4%BB%A3%E7%90%86/"><i class="fa fa-chevron-left">  </i><span>Git代理设置</span></a></div><div class="next-post pull-right"><a href="/2017/05/20/14.%E6%9E%B6%E6%9E%84/"><span>页面架构笔记</span><i class="fa fa-chevron-right"></i></a></div></nav></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2017 - 2024 By Doug Flands</div><div class="framework-info"><span>驱动 - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>主题 - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="footer_custom_text">+1S</div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.9.1"></script><script src="/js/fancybox.js?version=1.9.1"></script><script src="/js/sidebar.js?version=1.9.1"></script><script src="/js/copy.js?version=1.9.1"></script><script src="/js/fireworks.js?version=1.9.1"></script><script src="/js/transition.js?version=1.9.1"></script><script src="/js/scroll.js?version=1.9.1"></script><script src="/js/head.js?version=1.9.1"></script><script>if(/Android|webOS|iPhone|iPod|iPad|BlackBerry/i.test(navigator.userAgent)) {
   $('#nav').addClass('is-mobile')
   $('footer').addClass('is-mobile')
+  $('#top-container').addClass('is-mobile')
 }</script></body></html>
